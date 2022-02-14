@@ -1,179 +1,162 @@
 {
-  "placements": [
-      {
+  "placements": {
+    "Adult Social Care Statistics": {
         "directorate": "Data Services",
-        "name": "Adult Social Care Statistics",
         "numberOfGrads": 1
       },
-      {
+      "Business Intelligence/Data Visualisation": {
         "directorate": "Data Services",
-        "name": "Business Intelligence/Data Visualisation",
         "numberOfGrads": 1
       },
-      {
+      "Data Management/Engineering": {
         "directorate": "Data Services",
-        "name": "Data Management/Engineering",
         "numberOfGrads": 2
       },
-      {
+      "Turing Tribe": {
         "directorate": "Data Services",
-        "name": "Turing Tribe",
         "numberOfGrads": 1
       },
-      {
+      "Data Quality Dashboards": {
         "directorate": "Platforms",
-        "name": "Data Quality Dashboards",
         "numberOfGrads": 2
       },
-      {
+      "Spine Core": {
         "directorate": "Platforms",
-        "name": "Spine Core",
         "numberOfGrads": 3
       },
-      {
+      "NHS Pathways - Development Team": {
         "directorate": "Product Development",
-        "name": "NHS Pathways - Development Team",
         "numberOfGrads": 1
       },
-      {
+      "NHS Pathways - Reporting Team": {
         "directorate": "Product Development",
-        "name": "NHS Pathways - Reporting Team",
         "numberOfGrads": 1
       },
-      {
+      "111 Online - Developer": {
         "directorate": "Product Development",
-        "name": "111 Online - Developer",
         "numberOfGrads": 1
       },
-      {
+      "Cyber Security": {
         "directorate": "IT Operations (Including Cyber Security)",
-        "name": "Cyber Security",
         "numberOfGrads": 1
       },
-      {
+      "Core Infrastructure Services - Networks": {
         "directorate": "IT Operations (Including Cyber Security)",
-        "name": "Core Infrastructure Services - Networks",
         "numberOfGrads": 1
       },
-      {
+      "Core Infrastructure Services - Sustainable Hybrid Cloud": {
         "directorate": "IT Operations (Including Cyber Security)",
-        "name": "Core Infrastructure Services - Sustainable Hybrid Cloud",
         "numberOfGrads": 1
       },
-      {
+      "Live Services - IT Operations Centre": {
         "directorate": "IT Operations (Including Cyber Security)",
-        "name": "Live Services - IT Operations Centre",
         "numberOfGrads": 1
       }
-    ],
-  "preferences": [
-    {
-      "name": "Amaan Ibn-Nasar",
+  },
+  "preferences": {
+    "Amaan Ibn-Nasar": {
       "firstPreference": "Spine Core",
       "secondPreference": "Adult Social Care Statistics",
       "thirdPreference": "111 Online - Developer"
     },
-    {
-      "name": "Abbie Prescott",
+    "Abbie Prescott": {
       "firstPreference": "Live Services - IT Operations Centre",
       "secondPreference": "Cyber Security",
       "thirdPreference": "Data Quality Dashboards"
     },
-    {
-      "name": "Adam Carruthers",
+    "Adam Carruthers":{
       "firstPreference": "Core Infrastructure Services - Networks",
       "secondPreference": "Spine Core",
       "thirdPreference": "111 Online - Developer"
     },
-    {
-      "name": "Alice Tapper",
+    "Alice Tapper": {
       "firstPreference": "Business Intelligence/Data Visualisation",
       "secondPreference": "Cyber Security",
       "thirdPreference": "Turing Tribe"
     },
+    "Amelia Noonan":
     {
-      "name": "Amelia Noonan",
       "firstPreference": "Data Quality Dashboards",
       "secondPreference": "Business Intelligence/Data Visualisation",
       "thirdPreference": "Cyber Security"
     },
+    "Anna Evans":
     {
-      "name": "Anna Evans",
       "firstPreference": "Cyber Security",
       "secondPreference": "Turing Tribe",
       "thirdPreference": "NHS Pathways - Development Team"
     },
+    "Benjamin Wallace":
     {
-      "name": "Benjamin Wallace",
       "firstPreference": "Adult Social Care Statistics",
       "secondPreference": "111 Online - Developer",
       "thirdPreference": "Spine Core"
     },
+    "Joel Helbling":
     {
-      "name": "Joel Helbling",
       "firstPreference": "NHS Pathways - Development Team",
       "secondPreference": "Cyber Security",
       "thirdPreference": "Turing Tribe"
     },
+    "Joseph Wilson":
     {
-      "name": "Joseph Wilson",
       "firstPreference": "Spine Core",
       "secondPreference": "Data Quality Dashboards",
       "thirdPreference": "Core Infrastructure Services - Networks"
     },
+    "Laura Thirft":
     {
-      "name": "Laura Thirft",
       "firstPreference": "Data Management/Engineering",
       "secondPreference": "NHS Pathways - Reporting Team",
       "thirdPreference": "Core Infrastructure Services - Networks"
     },
+    "Maisie Blyth":
     {
-      "name": "Maisie Blyth",
       "firstPreference": "Spine Core",
       "secondPreference": "Turing Tribe",
       "thirdPreference": "Core Infrastructure Services - Sustainable Hybrid Cloud"
     },
+    "Mitul Dattani":
     {
-      "name": "Mitul Dattani",
       "firstPreference": "Core Infrastructure Services - Sustainable Hybrid Cloud",
       "secondPreference": "Data Quality Dashboards",
       "thirdPreference": "Spine Core"
     },
+    "Nathan Gregory":
     {
-      "name": "Nathan Gregory",
       "firstPreference": "Live Services - IT Operations Centre",
       "secondPreference": "Data Management/Engineering",
       "thirdPreference": "Cyber Security"
     },
+    "Nathan Pettit":
     {
-      "name": "Nathan Pettit",
       "firstPreference": "111 Online - Developer",
       "secondPreference": "Spine Core",
       "thirdPreference": "Turing Tribe"
     },
+    "Oluwadamiloju Makinde":
     {
-      "name": "Oluwadamiloju Makinde",
       "firstPreference": "Data Quality Dashboards",
       "secondPreference": "Business Intelligence/Data Visualisation",
       "thirdPreference": "Turing Tribe"
     },
+    "Roshaan Bajwa":
     {
-      "name": "Roshaan Bajwa",
       "firstPreference": "Turing Tribe",
       "secondPreference": "Spine Core",
       "thirdPreference": "Cyber Security"
     },
+    "Scott Caldwell-Nichols":
     {
-      "name": "Scott Caldwell-Nichols",
       "firstPreference": "Data Management/Engineering",
       "secondPreference": "NHS Pathways - Reporting Team",
       "thirdPreference": "Spine Core"
     },
+    "Zahra Ahmed":
     {
-      "name": "Zahra Ahmed",
       "firstPreference": "NHS Pathways - Reporting Team",
       "secondPreference": "111 Online - Developer",
       "thirdPreference": "Data Management/Engineering"
     }
-  ]
+  }
 }
