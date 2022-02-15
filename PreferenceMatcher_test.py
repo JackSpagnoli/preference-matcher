@@ -59,7 +59,7 @@ class PreferenceMatcherTest(unittest.TestCase):
                 },
                 "Live Services - IT Operations Centre": {
                     "directorate": "IT Operations (Including Cyber Security)",
-                    "numberOfGrads": 1
+                    "numberOfGrads": 2
                 }
             },
             "preferences": {
@@ -209,6 +209,8 @@ class PreferenceMatcherTest(unittest.TestCase):
                 },
             }
         }
+        self.preferencesGraph = self.preferenceMatcher.convertPreferencesToGraph(
+            self.simplifiedPreferencesObj)
 
     def test_readPreferenceFile(self):
         self.assertEqual(self.preferencesObj,
@@ -228,8 +230,6 @@ class PreferenceMatcherTest(unittest.TestCase):
         self.assertEqual(people, actualPeople)
 
     def test_convertPlacementsToGraph(self):
-        preferencesGraph = self.preferenceMatcher.convertPreferencesToGraph(
-            self.simplifiedPreferencesObj)
         expectedEdges = [('Adult Social Care Statistics', 'Amaan Ibn-Nasar'),
                          ('Adult Social Care Statistics', 'Alice Tapper'),
                          ('Business Intelligence/Data Visualisation', 'Amaan Ibn-Nasar'),
@@ -246,21 +246,33 @@ class PreferenceMatcherTest(unittest.TestCase):
                          ('111 Online - Developer', 'Alice Tapper'),
                          ('Cyber Security', 'Amaan Ibn-Nasar'),
                          ('Cyber Security', 'Alice Tapper')]
-        self.assertEqual(list(preferencesGraph.edges()), expectedEdges)
+        self.assertEqual(list(self.preferencesGraph.edges()), expectedEdges)
 
     def test_applyPreferenceWeighting(self):
-        preferencesGraph = self.preferenceMatcher.convertPreferencesToGraph(
-            self.simplifiedPreferencesObj)
         self.preferenceMatcher.applyPreferenceWeighting(
-            preferencesGraph, self.simplifiedPreferencesObj)
+            self.preferencesGraph, self.simplifiedPreferencesObj)
         amaanWeights = [v["weight"]
-                        for _, v in preferencesGraph["Amaan Ibn-Nasar"].items()]
+                        for _, v in self.preferencesGraph["Amaan Ibn-Nasar"].items()]
         aliceWeights = [v["weight"]
-                        for _, v in preferencesGraph["Alice Tapper"].items()]
+                        for _, v in self.preferencesGraph["Alice Tapper"].items()]
         self.assertEqual(
             [150, 100, 100, 175, 175, 175, 125, 100], amaanWeights)
         self.assertEqual(
             [100, 175, 125, 100, 100, 100, 100, 150], aliceWeights)
+
+    def test_weightPlacement(self):
+        self.preferenceMatcher.weightPlacement(
+            self.preferencesGraph, "Amaan Ibn-Nasar", self.preferencesObj, "Spine Core", 75)
+        amaanWeights = [v["weight"]
+                        for _, v in self.preferencesGraph["Amaan Ibn-Nasar"].items()]
+        self.assertEqual(
+            [100, 100, 100, 175, 175, 175, 100, 100], amaanWeights)
+        self.preferenceMatcher.weightPlacement(
+            self.preferencesGraph, "Amaan Ibn-Nasar", self.preferencesObj, "Adult Social Care Statistics", 50)
+        amaanWeights = [v["weight"]
+                        for _, v in self.preferencesGraph["Amaan Ibn-Nasar"].items()]
+        self.assertEqual(
+            [150, 100, 100, 175, 175, 175, 100, 100], amaanWeights)
 
 
 if __name__ == "__main__":

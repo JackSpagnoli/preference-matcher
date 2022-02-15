@@ -47,26 +47,24 @@ class PreferenceMatcher():
         nx.draw_networkx_edge_labels(graph, pos, edge_labels=labels)
         plt.show()
 
+    def weightPlacement(self, graph, person, preferences, preference, weighting):
+        if preferences["placements"][preference]["numberOfGrads"] > 1:
+            for i in range(1, preferences["placements"][preference]["numberOfGrads"]+1):
+                graph[person][f"{preference}_{i}"]["weight"] += weighting
+        else:
+            graph[person][preference]["weight"] += weighting
+
     def applyPreferenceWeighting(self, graph, preferences):
         for person in self.peopleNames:
             firstPreference = preferences["preferences"][person]["firstPreference"]
             secondPreference = preferences["preferences"][person]["secondPreference"]
             thirdPreference = preferences["preferences"][person]["thirdPreference"]
-            if preferences["placements"][firstPreference]["numberOfGrads"] > 1:
-                for i in range(1, preferences["placements"][firstPreference]["numberOfGrads"]+1):
-                    graph[person][f"{firstPreference}_{i}"]["weight"] += 75
-            else:
-                graph[person][firstPreference]["weight"] += 75
-            if preferences["placements"][secondPreference]["numberOfGrads"] > 1:
-                for i in range(1, preferences["placements"][secondPreference]["numberOfGrads"]+1):
-                    graph[person][f"{secondPreference}_{i}"]["weight"] += 50
-            else:
-                graph[person][secondPreference]["weight"] += 50
-            if preferences["placements"][thirdPreference]["numberOfGrads"] > 1:
-                for i in range(1, preferences["placements"][thirdPreference]["numberOfGrads"]+1):
-                    graph[person][f"{thirdPreference}_{i}"]["weight"] += 25
-            else:
-                graph[person][thirdPreference]["weight"] += 25
+            self.weightPlacement(
+                graph, person, preferences, firstPreference, 75)
+            self.weightPlacement(
+                graph, person, preferences, secondPreference, 50)
+            self.weightPlacement(
+                graph, person, preferences, thirdPreference, 25)
 
 
 if __name__ == "__main__":
@@ -76,5 +74,4 @@ if __name__ == "__main__":
     prefMatcher.drawGraph(preferenceGraph)
     prefMatcher.applyPreferenceWeighting(preferenceGraph, preferences)
     prefMatcher.drawGraph(preferenceGraph)
-    pp.pprint(nx.maximal_matching(preferenceGraph))
     pp.pprint(nx.max_weight_matching(preferenceGraph))
