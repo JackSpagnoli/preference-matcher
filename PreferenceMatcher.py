@@ -98,9 +98,9 @@ class PreferenceMatcher():
     def removePlacement(self, graph, person, preference):
         if self.preferences["placements"][preference]["numberOfGrads"] > 1:
             for i in range(1, self.preferences["placements"][preference]["numberOfGrads"]+1):
-                graph[person][f"{preference}_{i}"]["weight"] = 0
+                graph.remove_edge(person, f"{preference}_{i}")
         else:
-            graph[person][preference]["weight"] = 0
+            graph.remove_edge(person, preference)
 
     def removePreviousDirectoratePlacements(self, graph):
         for k in self.previousPlacements:
@@ -135,10 +135,18 @@ if __name__ == "__main__":
     for match in matching:
         if match[0] in prefMatcher.peopleNames:
             print(
-                f"{match[0]} - {match[1]} - 1st:{prefMatcher.preferences['preferences'][match[0]]['firstPreference']}")
+                f"""\n{match[0]} - {match[1]} -
+                1st:{prefMatcher.preferences['preferences'][match[0]]['firstPreference']} {preferenceGraph.edges[match[0], match[1]]['weight']}
+                2nd:{prefMatcher.preferences['preferences'][match[0]]['secondPreference']} {preferenceGraph.edges[match[0], match[1]]['weight']}
+                3rd:{prefMatcher.preferences['preferences'][match[0]]['thirdPreference']} {preferenceGraph.edges[match[0], match[1]]['weight']}
+                """)
         else:
             print(
-                f"{match[1]} - {match[0]} - 1st:{prefMatcher.preferences['preferences'][match[1]]['firstPreference']}")
+                f"""\n{match[1]} - {match[0]} -
+                1st:{prefMatcher.preferences['preferences'][match[1]]['firstPreference']} {preferenceGraph.edges[match[0], match[1]]['weight']}
+                2nd:{prefMatcher.preferences['preferences'][match[1]]['secondPreference']} {preferenceGraph.edges[match[0], match[1]]['weight']}
+                3rd:{prefMatcher.preferences['preferences'][match[1]]['thirdPreference']} {preferenceGraph.edges[match[0], match[1]]['weight']}
+                """)
     # prefMatcher.drawGraph(preferenceGraph)
     nodes = [{'name': str(name), "id": name}
              for i, name in enumerate(preferenceGraph.nodes())]
@@ -146,7 +154,6 @@ if __name__ == "__main__":
              for u in preferenceGraph.edges()]
     nodesWithNeighbours = {node: [
         neighbour for neighbour in preferenceGraph.neighbors(node)] for node in preferenceGraph.nodes()}
-    print(nodesWithNeighbours)
     with open('graph.json', 'w') as f:
         json.dump({'nodes': nodes, 'links': links, "people": prefMatcher.peopleNames, "placements": prefMatcher.placementNames, "nodesWithNeighbours": nodesWithNeighbours},
                   f, indent=4,)
