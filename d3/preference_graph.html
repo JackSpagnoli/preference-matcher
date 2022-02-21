@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+
+<svg width="1920" height="1080"></svg>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  const svg = d3.select("svg").attr("width", width).attr("height", height);
+
+  const people = [
+    "Amaan Ibn-Nasar",
+    "Abbie Prescott",
+    "Adam Carruthers",
+    "Alice Tapper",
+    "Amelia Noonan",
+    "Anna Evans",
+    "Benjamin Wallace",
+    "Joel Helbling",
+    "Joseph Wilson",
+    "Laura Thrift",
+    "Maisie Blyth",
+    "Mitul Dattani",
+    "Nathan Gregory",
+    "Nathan Pettit",
+    "Oluwadamiloju Makinde",
+    "Roshaan Bajwa",
+    "Scott Caldwell-Nichols",
+    "Zahra Ahmed",
+  ];
+  const baseNodes = [
+    {
+      name: "Adult Social Care Statistics",
+      id: "Adult Social Care Statistics",
+    },
+    {
+      name: "Business Intelligence/Data Visualisation",
+      id: "Business Intelligence/Data Visualisation",
+    },
+    {
+      name: "Data Management/Engineering_1",
+      id: "Data Management/Engineering_1",
+    },
+    {
+      name: "Data Management/Engineering_2",
+      id: "Data Management/Engineering_2",
+    },
+    {
+      name: "Turing Tribe",
+      id: "Turing Tribe",
+    },
+    {
+      name: "Data Quality Dashboards_1",
+      id: "Data Quality Dashboards_1",
+    },
+    {
+      name: "Data Quality Dashboards_2",
+      id: "Data Quality Dashboards_2",
+    },
+    {
+      name: "Spine Core_1",
+      id: "Spine Core_1",
+    },
+    {
+      name: "Spine Core_2",
+      id: "Spine Core_2",
+    },
+    {
+      name: "Spine Core_3",
+      id: "Spine Core_3",
+    },
+    {
+      name: "NHS Pathways - Development Team",
+      id: "NHS Pathways - Development Team",
+    },
+    {
+      name: "NHS Pathways - Reporting Team",
+      id: "NHS Pathways - Reporting Team",
+    },
+    {
+      name: "111 Online - Developer",
+      id: "111 Online - Developer",
+    },
+    {
+      name: "Cyber Security_1",
+      id: "Cyber Security_1",
+    },
+    {
+      name: "Cyber Security_2",
+      id: "Cyber Security_2",
+    },
+    {
+      name: "Cyber Security_3",
+      id: "Cyber Security_3",
+    },
+    {
+      name: "Core Infrastructure Services - Networks",
+      id: "Core Infrastructure Services - Networks",
+    },
+    {
+      name: "Core Infrastructure Services - Sustainable Hybrid Cloud",
+      id: "Core Infrastructure Services - Sustainable Hybrid Cloud",
+    },
+    {
+      name: "Live Services - IT Operations Centre_1",
+      id: "Live Services - IT Operations Centre_1",
+    },
+    {
+      name: "Live Services - IT Operations Centre_2",
+      id: "Live Services - IT Operations Centre_2",
+    },
+    {
+      name: "Amaan Ibn-Nasar",
+      id: "Amaan Ibn-Nasar",
+    },
+    {
+      name: "Abbie Prescott",
+      id: "Abbie Prescott",
+    },
+    {
+      name: "Adam Carruthers",
+      id: "Adam Carruthers",
+    },
+    {
+      name: "Alice Tapper",
+      id: "Alice Tapper",
+    },
+    {
+      name: "Amelia Noonan",
+      id: "Amelia Noonan",
+    },
+    {
+      name: "Anna Evans",
+      id: "Anna Evans",
+    },
+    {
+      name: "Benjamin Wallace",
+      id: "Benjamin Wallace",
+    },
+    {
+      name: "Joel Helbling",
+      id: "Joel Helbling",
+    },
+    {
+      name: "Joseph Wilson",
+      id: "Joseph Wilson",
+    },
+    {
+      name: "Laura Thrift",
+      id: "Laura Thrift",
+    },
+    {
+      name: "Maisie Blyth",
+      id: "Maisie Blyth",
+    },
+    {
+      name: "Mitul Dattani",
+      id: "Mitul Dattani",
+    },
+    {
+      name: "Nathan Gregory",
+      id: "Nathan Gregory",
+    },
+    {
+      name: "Nathan Pettit",
+      id: "Nathan Pettit",
+    },
+    {
+      name: "Oluwadamiloju Makinde",
+      id: "Oluwadamiloju Makinde",
+    },
+    {
+      name: "Roshaan Bajwa",
+      id: "Roshaan Bajwa",
+    },
+    {
+      name: "Scott Caldwell-Nichols",
+      id: "Scott Caldwell-Nichols",
+    },
+    {
+      name: "Zahra Ahmed",
+      id: "Zahra Ahmed",
+    },
+  ];
+  const baseLinks = [
+    {
+      source: "Adult Social Care Statistics",
+      target: "Amaan Ibn-Nasar",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Adult Social Care Statistics",
+      target: "Abbie Prescott",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Adult Social Care Statistics",
+      target: "Adam Carruthers",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Adult Social Care Statistics",
+      target: "Amelia Noonan",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Adult Social Care Statistics",
+      target: "Anna Evans",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "Adult Social Care Statistics",
+      target: "Joel Helbling",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Adult Social Care Statistics",
+      target: "Joseph Wilson",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Adult Social Care Statistics",
+      target: "Maisie Blyth",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Adult Social Care Statistics",
+      target: "Mitul Dattani",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Adult Social Care Statistics",
+      target: "Nathan Gregory",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Adult Social Care Statistics",
+      target: "Nathan Pettit",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Adult Social Care Statistics",
+      target: "Oluwadamiloju Makinde",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "Adult Social Care Statistics",
+      target: "Zahra Ahmed",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Business Intelligence/Data Visualisation",
+      target: "Amaan Ibn-Nasar",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Business Intelligence/Data Visualisation",
+      target: "Abbie Prescott",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Business Intelligence/Data Visualisation",
+      target: "Adam Carruthers",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Business Intelligence/Data Visualisation",
+      target: "Amelia Noonan",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Business Intelligence/Data Visualisation",
+      target: "Anna Evans",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Business Intelligence/Data Visualisation",
+      target: "Joel Helbling",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Business Intelligence/Data Visualisation",
+      target: "Joseph Wilson",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Business Intelligence/Data Visualisation",
+      target: "Maisie Blyth",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Business Intelligence/Data Visualisation",
+      target: "Mitul Dattani",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Business Intelligence/Data Visualisation",
+      target: "Nathan Gregory",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "Business Intelligence/Data Visualisation",
+      target: "Nathan Pettit",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Business Intelligence/Data Visualisation",
+      target: "Oluwadamiloju Makinde",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Business Intelligence/Data Visualisation",
+      target: "Zahra Ahmed",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_1",
+      target: "Amaan Ibn-Nasar",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_1",
+      target: "Abbie Prescott",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_1",
+      target: "Adam Carruthers",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_1",
+      target: "Amelia Noonan",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Data Management/Engineering_1",
+      target: "Anna Evans",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_1",
+      target: "Joel Helbling",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_1",
+      target: "Joseph Wilson",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Data Management/Engineering_1",
+      target: "Maisie Blyth",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_1",
+      target: "Mitul Dattani",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_1",
+      target: "Nathan Gregory",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_1",
+      target: "Nathan Pettit",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_1",
+      target: "Oluwadamiloju Makinde",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_1",
+      target: "Zahra Ahmed",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "Data Management/Engineering_2",
+      target: "Amaan Ibn-Nasar",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_2",
+      target: "Abbie Prescott",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_2",
+      target: "Adam Carruthers",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_2",
+      target: "Amelia Noonan",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Data Management/Engineering_2",
+      target: "Anna Evans",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_2",
+      target: "Joel Helbling",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_2",
+      target: "Joseph Wilson",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Data Management/Engineering_2",
+      target: "Maisie Blyth",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_2",
+      target: "Mitul Dattani",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_2",
+      target: "Nathan Gregory",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_2",
+      target: "Nathan Pettit",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_2",
+      target: "Oluwadamiloju Makinde",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Management/Engineering_2",
+      target: "Zahra Ahmed",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "Turing Tribe",
+      target: "Amaan Ibn-Nasar",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Turing Tribe",
+      target: "Abbie Prescott",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Turing Tribe",
+      target: "Adam Carruthers",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Turing Tribe",
+      target: "Amelia Noonan",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Turing Tribe",
+      target: "Anna Evans",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Turing Tribe",
+      target: "Joel Helbling",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "Turing Tribe",
+      target: "Joseph Wilson",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Turing Tribe",
+      target: "Maisie Blyth",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Turing Tribe",
+      target: "Mitul Dattani",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "Turing Tribe",
+      target: "Nathan Gregory",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Turing Tribe",
+      target: "Nathan Pettit",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "Turing Tribe",
+      target: "Oluwadamiloju Makinde",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Turing Tribe",
+      target: "Zahra Ahmed",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_1",
+      target: "Abbie Prescott",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "Data Quality Dashboards_1",
+      target: "Adam Carruthers",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_1",
+      target: "Alice Tapper",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_1",
+      target: "Anna Evans",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_1",
+      target: "Benjamin Wallace",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Data Quality Dashboards_1",
+      target: "Joel Helbling",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_1",
+      target: "Laura Thrift",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_1",
+      target: "Mitul Dattani",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_1",
+      target: "Nathan Gregory",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_1",
+      target: "Nathan Pettit",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_1",
+      target: "Roshaan Bajwa",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_1",
+      target: "Scott Caldwell-Nichols",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_1",
+      target: "Zahra Ahmed",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_2",
+      target: "Abbie Prescott",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "Data Quality Dashboards_2",
+      target: "Adam Carruthers",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_2",
+      target: "Alice Tapper",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_2",
+      target: "Anna Evans",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_2",
+      target: "Benjamin Wallace",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Data Quality Dashboards_2",
+      target: "Joel Helbling",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_2",
+      target: "Laura Thrift",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_2",
+      target: "Mitul Dattani",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_2",
+      target: "Nathan Gregory",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_2",
+      target: "Nathan Pettit",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_2",
+      target: "Roshaan Bajwa",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_2",
+      target: "Scott Caldwell-Nichols",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Data Quality Dashboards_2",
+      target: "Zahra Ahmed",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_1",
+      target: "Abbie Prescott",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_1",
+      target: "Adam Carruthers",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Spine Core_1",
+      target: "Alice Tapper",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Spine Core_1",
+      target: "Anna Evans",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Spine Core_1",
+      target: "Benjamin Wallace",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_1",
+      target: "Joel Helbling",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_1",
+      target: "Laura Thrift",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_1",
+      target: "Mitul Dattani",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Spine Core_1",
+      target: "Nathan Gregory",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_1",
+      target: "Nathan Pettit",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_1",
+      target: "Roshaan Bajwa",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Spine Core_1",
+      target: "Scott Caldwell-Nichols",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Spine Core_1",
+      target: "Zahra Ahmed",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_2",
+      target: "Abbie Prescott",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_2",
+      target: "Adam Carruthers",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Spine Core_2",
+      target: "Alice Tapper",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Spine Core_2",
+      target: "Anna Evans",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Spine Core_2",
+      target: "Benjamin Wallace",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_2",
+      target: "Joel Helbling",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_2",
+      target: "Laura Thrift",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_2",
+      target: "Mitul Dattani",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Spine Core_2",
+      target: "Nathan Gregory",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_2",
+      target: "Nathan Pettit",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_2",
+      target: "Roshaan Bajwa",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Spine Core_2",
+      target: "Scott Caldwell-Nichols",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Spine Core_2",
+      target: "Zahra Ahmed",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_3",
+      target: "Abbie Prescott",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_3",
+      target: "Adam Carruthers",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Spine Core_3",
+      target: "Alice Tapper",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Spine Core_3",
+      target: "Anna Evans",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Spine Core_3",
+      target: "Benjamin Wallace",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_3",
+      target: "Joel Helbling",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_3",
+      target: "Laura Thrift",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_3",
+      target: "Mitul Dattani",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Spine Core_3",
+      target: "Nathan Gregory",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_3",
+      target: "Nathan Pettit",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Spine Core_3",
+      target: "Roshaan Bajwa",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Spine Core_3",
+      target: "Scott Caldwell-Nichols",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Spine Core_3",
+      target: "Zahra Ahmed",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Development Team",
+      target: "Amaan Ibn-Nasar",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "NHS Pathways - Development Team",
+      target: "Abbie Prescott",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Development Team",
+      target: "Adam Carruthers",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Development Team",
+      target: "Alice Tapper",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Development Team",
+      target: "Amelia Noonan",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "NHS Pathways - Development Team",
+      target: "Anna Evans",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Development Team",
+      target: "Benjamin Wallace",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Development Team",
+      target: "Joseph Wilson",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Development Team",
+      target: "Laura Thrift",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Development Team",
+      target: "Maisie Blyth",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Development Team",
+      target: "Mitul Dattani",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Development Team",
+      target: "Nathan Gregory",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Development Team",
+      target: "Oluwadamiloju Makinde",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Development Team",
+      target: "Roshaan Bajwa",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "NHS Pathways - Development Team",
+      target: "Scott Caldwell-Nichols",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Reporting Team",
+      target: "Amaan Ibn-Nasar",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Reporting Team",
+      target: "Abbie Prescott",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Reporting Team",
+      target: "Adam Carruthers",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Reporting Team",
+      target: "Alice Tapper",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Reporting Team",
+      target: "Amelia Noonan",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Reporting Team",
+      target: "Anna Evans",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Reporting Team",
+      target: "Benjamin Wallace",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Reporting Team",
+      target: "Joseph Wilson",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Reporting Team",
+      target: "Laura Thrift",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "NHS Pathways - Reporting Team",
+      target: "Maisie Blyth",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Reporting Team",
+      target: "Mitul Dattani",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Reporting Team",
+      target: "Nathan Gregory",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "NHS Pathways - Reporting Team",
+      target: "Oluwadamiloju Makinde",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Reporting Team",
+      target: "Roshaan Bajwa",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "NHS Pathways - Reporting Team",
+      target: "Scott Caldwell-Nichols",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "111 Online - Developer",
+      target: "Amaan Ibn-Nasar",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "111 Online - Developer",
+      target: "Abbie Prescott",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "111 Online - Developer",
+      target: "Adam Carruthers",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "111 Online - Developer",
+      target: "Alice Tapper",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "111 Online - Developer",
+      target: "Amelia Noonan",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "111 Online - Developer",
+      target: "Anna Evans",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "111 Online - Developer",
+      target: "Benjamin Wallace",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "111 Online - Developer",
+      target: "Joseph Wilson",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "111 Online - Developer",
+      target: "Laura Thrift",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "111 Online - Developer",
+      target: "Maisie Blyth",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "111 Online - Developer",
+      target: "Mitul Dattani",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "111 Online - Developer",
+      target: "Nathan Gregory",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "111 Online - Developer",
+      target: "Oluwadamiloju Makinde",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "111 Online - Developer",
+      target: "Roshaan Bajwa",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "111 Online - Developer",
+      target: "Scott Caldwell-Nichols",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Cyber Security_1",
+      target: "Amaan Ibn-Nasar",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Cyber Security_1",
+      target: "Alice Tapper",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "Cyber Security_1",
+      target: "Amelia Noonan",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Cyber Security_1",
+      target: "Benjamin Wallace",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Cyber Security_1",
+      target: "Joel Helbling",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Cyber Security_1",
+      target: "Joseph Wilson",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Cyber Security_1",
+      target: "Laura Thrift",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Cyber Security_1",
+      target: "Maisie Blyth",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Cyber Security_1",
+      target: "Nathan Pettit",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Cyber Security_1",
+      target: "Oluwadamiloju Makinde",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Cyber Security_1",
+      target: "Roshaan Bajwa",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Cyber Security_1",
+      target: "Scott Caldwell-Nichols",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "Cyber Security_1",
+      target: "Zahra Ahmed",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Cyber Security_2",
+      target: "Amaan Ibn-Nasar",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Cyber Security_2",
+      target: "Alice Tapper",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "Cyber Security_2",
+      target: "Amelia Noonan",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Cyber Security_2",
+      target: "Benjamin Wallace",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Cyber Security_2",
+      target: "Joel Helbling",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Cyber Security_2",
+      target: "Joseph Wilson",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Cyber Security_2",
+      target: "Laura Thrift",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Cyber Security_2",
+      target: "Maisie Blyth",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Cyber Security_2",
+      target: "Nathan Pettit",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Cyber Security_2",
+      target: "Oluwadamiloju Makinde",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Cyber Security_2",
+      target: "Roshaan Bajwa",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Cyber Security_2",
+      target: "Scott Caldwell-Nichols",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "Cyber Security_2",
+      target: "Zahra Ahmed",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Cyber Security_3",
+      target: "Amaan Ibn-Nasar",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Cyber Security_3",
+      target: "Alice Tapper",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "Cyber Security_3",
+      target: "Amelia Noonan",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Cyber Security_3",
+      target: "Benjamin Wallace",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Cyber Security_3",
+      target: "Joel Helbling",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Cyber Security_3",
+      target: "Joseph Wilson",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Cyber Security_3",
+      target: "Laura Thrift",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Cyber Security_3",
+      target: "Maisie Blyth",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Cyber Security_3",
+      target: "Nathan Pettit",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Cyber Security_3",
+      target: "Oluwadamiloju Makinde",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Cyber Security_3",
+      target: "Roshaan Bajwa",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Cyber Security_3",
+      target: "Scott Caldwell-Nichols",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "Cyber Security_3",
+      target: "Zahra Ahmed",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Networks",
+      target: "Amaan Ibn-Nasar",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Networks",
+      target: "Alice Tapper",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Networks",
+      target: "Amelia Noonan",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Networks",
+      target: "Benjamin Wallace",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Networks",
+      target: "Joel Helbling",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Networks",
+      target: "Joseph Wilson",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Networks",
+      target: "Laura Thrift",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Networks",
+      target: "Maisie Blyth",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Networks",
+      target: "Nathan Pettit",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Networks",
+      target: "Oluwadamiloju Makinde",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Networks",
+      target: "Roshaan Bajwa",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Networks",
+      target: "Scott Caldwell-Nichols",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Networks",
+      target: "Zahra Ahmed",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Sustainable Hybrid Cloud",
+      target: "Amaan Ibn-Nasar",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Sustainable Hybrid Cloud",
+      target: "Alice Tapper",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Sustainable Hybrid Cloud",
+      target: "Amelia Noonan",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Sustainable Hybrid Cloud",
+      target: "Benjamin Wallace",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Sustainable Hybrid Cloud",
+      target: "Joel Helbling",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Sustainable Hybrid Cloud",
+      target: "Joseph Wilson",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Sustainable Hybrid Cloud",
+      target: "Laura Thrift",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Sustainable Hybrid Cloud",
+      target: "Maisie Blyth",
+      value: 125,
+      weight: 125,
+    },
+    {
+      source: "Core Infrastructure Services - Sustainable Hybrid Cloud",
+      target: "Nathan Pettit",
+      value: 225,
+      weight: 225,
+    },
+    {
+      source: "Core Infrastructure Services - Sustainable Hybrid Cloud",
+      target: "Oluwadamiloju Makinde",
+      value: 150,
+      weight: 150,
+    },
+    {
+      source: "Core Infrastructure Services - Sustainable Hybrid Cloud",
+      target: "Roshaan Bajwa",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Sustainable Hybrid Cloud",
+      target: "Scott Caldwell-Nichols",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Core Infrastructure Services - Sustainable Hybrid Cloud",
+      target: "Zahra Ahmed",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_1",
+      target: "Amaan Ibn-Nasar",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_1",
+      target: "Alice Tapper",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_1",
+      target: "Amelia Noonan",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_1",
+      target: "Benjamin Wallace",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_1",
+      target: "Joel Helbling",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_1",
+      target: "Joseph Wilson",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_1",
+      target: "Laura Thrift",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_1",
+      target: "Maisie Blyth",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_1",
+      target: "Nathan Pettit",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_1",
+      target: "Oluwadamiloju Makinde",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_1",
+      target: "Roshaan Bajwa",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_1",
+      target: "Scott Caldwell-Nichols",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_1",
+      target: "Zahra Ahmed",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_2",
+      target: "Amaan Ibn-Nasar",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_2",
+      target: "Alice Tapper",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_2",
+      target: "Amelia Noonan",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_2",
+      target: "Benjamin Wallace",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_2",
+      target: "Joel Helbling",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_2",
+      target: "Joseph Wilson",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_2",
+      target: "Laura Thrift",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_2",
+      target: "Maisie Blyth",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_2",
+      target: "Nathan Pettit",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_2",
+      target: "Oluwadamiloju Makinde",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_2",
+      target: "Roshaan Bajwa",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_2",
+      target: "Scott Caldwell-Nichols",
+      value: 50,
+      weight: 50,
+    },
+    {
+      source: "Live Services - IT Operations Centre_2",
+      target: "Zahra Ahmed",
+      value: 50,
+      weight: 50,
+    },
+  ];
+
+  var nodes = [...baseNodes];
+  var links = [...baseLinks];
+  const dragDrop = d3
+    .drag()
+    .on("start", (node) => {
+      node.fx = node.x;
+      node.fy = node.y;
+    })
+    .on("drag", (node) => {
+      simulation.alphaTarget(0.7).restart();
+      node.fx = d3.event.x;
+      node.fy = d3.event.y;
+    })
+    .on("end", (node) => {
+      if (!d3.event.active) {
+        simulation.alphaTarget(0);
+      }
+      node.fx = null;
+      node.fy = null;
+    });
+
+  const simulation = d3
+    .forceSimulation()
+    .force(
+      "charge",
+      d3.forceManyBody().strength(-200).theta(0.5).distanceMax(1000)
+    )
+    .force("center", d3.forceCenter(width / 2, height / 2))
+    .force(
+      "link",
+      d3
+        .forceLink()
+        .id((link) => link.id)
+        .distance(250)
+    );
+
+  const getNeighbors = (node) => {
+    return links.reduce(
+      (neighbors, link) => {
+        if (link.target.id === node.id) {
+          neighbors.push(link.source.id);
+        } else if (link.source.id === node.id) {
+          neighbors.push(link.target.id);
+        }
+
+        return neighbors;
+      },
+      [node.id]
+    );
+  };
+
+  const isNeighborLink = (node, link) => {
+    return link.target.id === node.id || link.source.id === node.id;
+  };
+
+  function getTextColor(node, neighbors) {
+    return neighbors.indexOf(node.id) ? "green" : "black";
+  }
+  function getLinkColor(node, link) {
+    return isNeighborLink(node, link) ? "green" : "#E5E5E5";
+  }
+  var selectedId;
+
+  function resetData() {
+    var nodeIds = nodes.map(function (node) {
+      return node.id;
+    });
+
+    baseNodes.forEach(function (node) {
+      if (nodeIds.indexOf(node.id) === -1) {
+        nodes.push(node);
+      }
+    });
+
+    links = baseLinks;
+  }
+  function selectNode(selectedNode) {
+    if (selectedId === selectedNode.id) {
+      selectedId = undefined;
+      resetData();
+      updateSimulation();
+    } else {
+      selectedId = selectedNode.id;
+      updateData(selectedNode);
+      updateSimulation();
+    }
+  }
+
+  function updateData(selectedNode) {
+    const neighbors = getNeighbors(selectedNode);
+    const newNodes = baseNodes.filter((node) => {
+      return neighbors.indexOf(node.id) > -1 || node.level === 1;
+    });
+    const diff = {
+      removed: nodes.filter((node) => newNodes.indexOf(node) === -1),
+      added: newNodes.filter((node) => nodes.indexOf(node) === -1),
+    };
+    diff.removed.forEach((node) => nodes.splice(nodes.indexOf(node), 1));
+    diff.added.forEach((node) => nodes.push(node));
+    links = baseLinks.filter((link) => {
+      return (
+        link.target.id === selectedNode.id || link.source.id === selectedNode.id
+      );
+    });
+  }
+
+  const linkGroup = svg.append("g").attr("class", "links");
+  const nodeGroup = svg.append("g").attr("class", "nodes");
+  const textGroup = svg.append("g").attr("class", "texts");
+  const weightGroup = svg.append("g").attr("class", "texts");
+
+  let linkElements, nodeElements, textElements, weightElements;
+
+  const updateGraph = () => {
+    linkElements = linkGroup
+      .selectAll("line")
+      .data(links, (link) => link.target.id + link.source.id);
+    linkElements.exit().remove();
+    const linkEnter = linkElements
+      .enter()
+      .append("line")
+      .attr("stroke-width", 1)
+      .attr("stroke", "rgba(50, 50, 50, 0.2)");
+
+    linkElements = linkEnter.merge(linkElements);
+
+    weightElements = weightGroup
+      .selectAll("text")
+      .data(links, (link) => link.weight);
+    console.log(weightElements);
+    weightElements.exit().remove();
+    const weightEnter = weightElements
+      .enter()
+      .append("text")
+      .text((link) => link.weight)
+      .attr("fill", "blue")
+      .attr("dx", 0)
+      .attr("dy", 0)
+      .attr("stroke-width", 0.25)
+      .attr("stroke", "rgba(0, 0, 0, 1)");
+
+    weightElements = weightEnter.merge(weightElements);
+
+    nodeElements = nodeGroup.selectAll("circle").data(nodes, function (node) {
+      return node.id;
+    });
+
+    nodeElements.exit().remove();
+
+    var nodeEnter = nodeElements
+      .enter()
+      .append("circle")
+      .attr("r", 10)
+      .attr("fill", function (node) {
+        return people.includes(node.name) ? "red" : "gray";
+      })
+      .call(dragDrop)
+      .on("click", selectNode);
+
+    nodeElements = nodeEnter.merge(nodeElements);
+
+    // texts
+    textElements = textGroup.selectAll("text").data(nodes, function (node) {
+      return node.id;
+    });
+
+    textElements.exit().remove();
+
+    var textEnter = textElements
+      .enter()
+      .append("text")
+      .text(function (node) {
+        return node.name;
+      })
+      .attr("font-size", 15)
+      .attr("dx", 15)
+      .attr("dy", 4)
+      .style("user-select", "none")
+      .attr("fill", "white")
+      .attr("stroke-width", 0.75)
+      .attr("stroke", "rgba(0, 0, 0, 1)");
+
+    textElements = textEnter.merge(textElements);
+  };
+
+  const updateSimulation = () => {
+    updateGraph();
+
+    simulation.nodes(nodes).on("tick", () => {
+      nodeElements.attr("cx", (node) => node.x).attr("cy", (node) => node.y);
+      textElements.attr("x", (node) => node.x).attr("y", (node) => node.y);
+      weightElements
+        .attr("x", (link) => (link.source.x + link.target.x) / 2)
+        .attr("y", (link) => (link.source.y + link.target.y) / 2);
+      linkElements.attr("x1", (link) => link.source.x);
+      linkElements.attr("y1", (link) => link.source.y);
+      linkElements.attr("x2", (link) => link.target.x);
+      linkElements.attr("y2", (link) => link.target.y);
+    });
+    simulation.force("link").links(links);
+    simulation.alphaTarget(0.7).restart();
+  };
+  updateSimulation();
+</script>
