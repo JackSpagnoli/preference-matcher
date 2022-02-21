@@ -135,19 +135,16 @@ if __name__ == "__main__":
     for match in matching:
         if match[0] in prefMatcher.peopleNames:
             print(
-                f"""\n{match[0]} - {match[1]} -
-                1st:{prefMatcher.preferences['preferences'][match[0]]['firstPreference']} {preferenceGraph.edges[match[0], match[1]]['weight']}
-                2nd:{prefMatcher.preferences['preferences'][match[0]]['secondPreference']} {preferenceGraph.edges[match[0], match[1]]['weight']}
-                3rd:{prefMatcher.preferences['preferences'][match[0]]['thirdPreference']} {preferenceGraph.edges[match[0], match[1]]['weight']}
-                """)
+                f"""\n{match[0]} - {match[1]}:
+                1st:{prefMatcher.preferences['preferences'][match[0]]['firstPreference']}
+                2nd:{prefMatcher.preferences['preferences'][match[0]]['secondPreference']}
+                3rd:{prefMatcher.preferences['preferences'][match[0]]['thirdPreference']}""")
         else:
             print(
-                f"""\n{match[1]} - {match[0]} -
-                1st:{prefMatcher.preferences['preferences'][match[1]]['firstPreference']} {preferenceGraph.edges[match[0], match[1]]['weight']}
-                2nd:{prefMatcher.preferences['preferences'][match[1]]['secondPreference']} {preferenceGraph.edges[match[0], match[1]]['weight']}
-                3rd:{prefMatcher.preferences['preferences'][match[1]]['thirdPreference']} {preferenceGraph.edges[match[0], match[1]]['weight']}
-                """)
-    # prefMatcher.drawGraph(preferenceGraph)
+                f"""\n{match[1]} - {match[0]}:
+                1st:{prefMatcher.preferences['preferences'][match[1]]['firstPreference']}
+                2nd:{prefMatcher.preferences['preferences'][match[1]]['secondPreference']}
+                3rd:{prefMatcher.preferences['preferences'][match[1]]['thirdPreference']}""")
     nodes = [{'name': str(name), "id": name}
              for i, name in enumerate(preferenceGraph.nodes())]
     links = [{'source': u[0], 'target': u[1], "value": preferenceGraph.edges[u[0], u[1]]["weight"], "weight": preferenceGraph.edges[u[0], u[1]]["weight"]}
