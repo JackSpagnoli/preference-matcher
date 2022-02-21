@@ -6,7 +6,8 @@ from PreferenceMatcher import PreferenceMatcher
 class PreferenceMatcherTest(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.preferenceMatcher = PreferenceMatcher()
+        self.preferenceMatcher = PreferenceMatcher(
+            "simplifiedPreferences.json", "previousPlacements.json")
         self.preferencesObj = {
             "placements": {
                 "Adult Social Care Statistics": {
@@ -209,12 +210,7 @@ class PreferenceMatcherTest(unittest.TestCase):
                 },
             }
         }
-        self.preferencesGraph = self.preferenceMatcher.convertPreferencesToGraph(
-            self.simplifiedPreferencesObj)
-
-    def test_readPreferenceFile(self):
-        self.assertEqual(self.preferencesObj,
-                         self.preferenceMatcher.readPreferenceFile())
+        self.preferencesGraph = self.preferenceMatcher.convertPreferencesToGraph()
 
     def test_addPlacementNodesToGraph(self):
         placements = ["Adult Social Care Statistics",
@@ -225,8 +221,7 @@ class PreferenceMatcherTest(unittest.TestCase):
 
     def test_addPeopleNodesToGraph(self):
         people = ["Amaan Ibn-Nasar", "Alice Tapper"]
-        actualPeople = self.preferenceMatcher.extractPeopleNames(
-            self.simplifiedPreferencesObj["preferences"])
+        actualPeople = self.preferenceMatcher.extractPeopleNames()
         self.assertEqual(people, actualPeople)
 
     def test_convertPlacementsToGraph(self):
@@ -234,45 +229,74 @@ class PreferenceMatcherTest(unittest.TestCase):
                          ('Adult Social Care Statistics', 'Alice Tapper'),
                          ('Business Intelligence/Data Visualisation', 'Amaan Ibn-Nasar'),
                          ('Business Intelligence/Data Visualisation', 'Alice Tapper'),
-                         ('Turing Tribe', 'Amaan Ibn-Nasar'), ('Turing Tribe',
-                                                               'Alice Tapper'),
-                         ('Spine Core_1', 'Amaan Ibn-Nasar'), ('Spine Core_1',
-                                                               'Alice Tapper'),
-                         ('Spine Core_2', 'Amaan Ibn-Nasar'), ('Spine Core_2',
-                                                               'Alice Tapper'),
-                         ('Spine Core_3', 'Amaan Ibn-Nasar'), ('Spine Core_3',
-                                                               'Alice Tapper'),
+                         ('Data Management/Engineering_1', 'Amaan Ibn-Nasar'),
+                         ('Data Management/Engineering_1', 'Alice Tapper'),
+                         ('Data Management/Engineering_2', 'Amaan Ibn-Nasar'),
+                         ('Data Management/Engineering_2', 'Alice Tapper'),
+                         ('Turing Tribe', 'Amaan Ibn-Nasar'),
+                         ('Turing Tribe', 'Alice Tapper'),
+                         ('Data Quality Dashboards_1', 'Amaan Ibn-Nasar'),
+                         ('Data Quality Dashboards_1', 'Alice Tapper'),
+                         ('Data Quality Dashboards_2', 'Amaan Ibn-Nasar'),
+                         ('Data Quality Dashboards_2', 'Alice Tapper'),
+                         ('Spine Core_1', 'Amaan Ibn-Nasar'),
+                         ('Spine Core_1', 'Alice Tapper'),
+                         ('Spine Core_2', 'Amaan Ibn-Nasar'),
+                         ('Spine Core_2', 'Alice Tapper'),
+                         ('Spine Core_3', 'Amaan Ibn-Nasar'),
+                         ('Spine Core_3', 'Alice Tapper'),
+                         ('NHS Pathways - Development Team', 'Amaan Ibn-Nasar'),
+                         ('NHS Pathways - Development Team', 'Alice Tapper'),
+                         ('NHS Pathways - Reporting Team', 'Amaan Ibn-Nasar'),
+                         ('NHS Pathways - Reporting Team', 'Alice Tapper'),
                          ('111 Online - Developer', 'Amaan Ibn-Nasar'),
                          ('111 Online - Developer', 'Alice Tapper'),
                          ('Cyber Security', 'Amaan Ibn-Nasar'),
-                         ('Cyber Security', 'Alice Tapper')]
+                         ('Cyber Security', 'Alice Tapper'),
+                         ('Core Infrastructure Services - Networks', 'Amaan Ibn-Nasar'),
+                         ('Core Infrastructure Services - Networks', 'Alice Tapper'),
+                         ('Core Infrastructure Services - Sustainable Hybrid Cloud',
+                          'Amaan Ibn-Nasar'),
+                         ('Core Infrastructure Services - Sustainable Hybrid Cloud',
+                          'Alice Tapper'),
+                         ('Live Services - IT Operations Centre_1', 'Amaan Ibn-Nasar'),
+                         ('Live Services - IT Operations Centre_1', 'Alice Tapper'),
+                         ('Live Services - IT Operations Centre_2', 'Amaan Ibn-Nasar'),
+                         ('Live Services - IT Operations Centre_2', 'Alice Tapper')]
         self.assertEqual(list(self.preferencesGraph.edges()), expectedEdges)
 
     def test_applyPreferenceWeighting(self):
         self.preferenceMatcher.applyPreferenceWeighting(
-            self.preferencesGraph, self.simplifiedPreferencesObj)
+            self.preferencesGraph)
         amaanWeights = [v["weight"]
                         for _, v in self.preferencesGraph["Amaan Ibn-Nasar"].items()]
         aliceWeights = [v["weight"]
                         for _, v in self.preferencesGraph["Alice Tapper"].items()]
         self.assertEqual(
-            [150, 100, 100, 175, 175, 175, 125, 100], amaanWeights)
+            [150, 100, 100, 100, 100, 100, 100, 175, 175, 175, 100, 100, 125, 100, 100, 100, 100, 100], amaanWeights)
         self.assertEqual(
-            [100, 175, 125, 100, 100, 100, 100, 150], aliceWeights)
+            [100, 175, 100, 100, 125, 100, 100, 100, 100, 100, 100, 100, 100, 150, 100, 100, 100, 100], aliceWeights)
 
     def test_weightPlacement(self):
         self.preferenceMatcher.weightPlacement(
-            self.preferencesGraph, "Amaan Ibn-Nasar", self.preferencesObj, "Spine Core", 75)
+            self.preferencesGraph, "Amaan Ibn-Nasar", "Spine Core", 75)
         amaanWeights = [v["weight"]
                         for _, v in self.preferencesGraph["Amaan Ibn-Nasar"].items()]
         self.assertEqual(
-            [100, 100, 100, 175, 175, 175, 100, 100], amaanWeights)
+            [100, 100, 100, 100, 100, 100, 100, 175, 175, 175, 100, 100, 100, 100, 100, 100, 100, 100], amaanWeights)
         self.preferenceMatcher.weightPlacement(
-            self.preferencesGraph, "Amaan Ibn-Nasar", self.preferencesObj, "Adult Social Care Statistics", 50)
+            self.preferencesGraph, "Amaan Ibn-Nasar", "Adult Social Care Statistics", 50)
         amaanWeights = [v["weight"]
                         for _, v in self.preferencesGraph["Amaan Ibn-Nasar"].items()]
         self.assertEqual(
-            [150, 100, 100, 175, 175, 175, 100, 100], amaanWeights)
+            [150, 100, 100, 100, 100, 100, 100, 175, 175, 175, 100, 100, 100, 100, 100, 100, 100, 100], amaanWeights)
+
+    def test_removePreviousDirectoratePlacements(self):
+        self.preferenceMatcher.removePreviousDirectoratePlacements(
+            self.preferencesGraph)
+        amaanWeights = [v["weight"]
+                        for _, v in self.preferencesGraph["Amaan Ibn-Nasar"].items()]
+        self.assertEqual(5, amaanWeights.count(0))
 
 
 if __name__ == "__main__":

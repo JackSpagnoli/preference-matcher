@@ -1,0 +1,68 @@
+{
+  "placements": {
+    "Adult Social Care Statistics": {
+        "directorate": "Data Services",
+        "numberOfGrads": 1
+      },
+      "Business Intelligence/Data Visualisation": {
+        "directorate": "Data Services",
+        "numberOfGrads": 1
+      },
+      "Data Management/Engineering": {
+        "directorate": "Data Services",
+        "numberOfGrads": 2
+      },
+      "Turing Tribe": {
+        "directorate": "Data Services",
+        "numberOfGrads": 1
+      },
+      "Data Quality Dashboards": {
+        "directorate": "Platforms",
+        "numberOfGrads": 2
+      },
+      "Spine Core": {
+        "directorate": "Platforms",
+        "numberOfGrads": 3
+      },
+      "NHS Pathways - Development Team": {
+        "directorate": "Product Development",
+        "numberOfGrads": 1
+      },
+      "NHS Pathways - Reporting Team": {
+        "directorate": "Product Development",
+        "numberOfGrads": 1
+      },
+      "111 Online - Developer": {
+        "directorate": "Product Development",
+        "numberOfGrads": 1
+      },
+      "Cyber Security": {
+        "directorate": "IT Operations (Including Cyber Security)",
+        "numberOfGrads": 1
+      },
+      "Core Infrastructure Services - Networks": {
+        "directorate": "IT Operations (Including Cyber Security)",
+        "numberOfGrads": 1
+      },
+      "Core Infrastructure Services - Sustainable Hybrid Cloud": {
+        "directorate": "IT Operations (Including Cyber Security)",
+        "numberOfGrads": 1
+      },
+      "Live Services - IT Operations Centre": {
+        "directorate": "IT Operations (Including Cyber Security)",
+        "numberOfGrads": 2
+      }
+  },
+  "preferences": {
+      "Amaan Ibn-Nasar": {
+          "firstPreference": "Spine Core",
+          "secondPreference": "Adult Social Care Statistics",
+          "thirdPreference": "111 Online - Developer"
+      },
+      "Alice Tapper": {
+          "firstPreference": "Business Intelligence/Data Visualisation",
+          "secondPreference": "Cyber Security",
+          "thirdPreference": "Turing Tribe"
+      }
+  }
+}
