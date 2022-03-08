@@ -1,0 +1,17 @@
+{
+  "Mia Noonan": {
+    "firstPreference": 17,
+    "secondPreference": 22,
+    "thirdPreference": 3
+  },
+  "Nathan": {
+    "firstPreference": 14,
+    "secondPreference": 39,
+    "thirdPreference": 29
+  },
+  "Joe Wilson": {
+    "firstPreference": 3,
+    "secondPreference": 34,
+    "thirdPreference": 19
+  }
+}

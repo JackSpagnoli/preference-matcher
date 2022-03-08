@@ -1,5 +1,6 @@
 import json
 import pprint as pp
+import re
 import networkx as nx
 from networkx.readwrite import json_graph
 import itertools
@@ -8,42 +9,65 @@ from d3graph import d3graph, vec2adjmat
 import pandas as pd
 import numpy as np
 
-DIRECTORATES_BY_PLACEMENT_NAME = {
-    "Adult Social Care Statistics": "Data Services",
-    "Business Intelligence/Data Visualisation": "Data Services",
-    "Data Management/Engineering": "Data Services",
-    "Turing Tribe": "Data Services",
-    "Data Quality Dashboards": "Platforms",
-    "Spine Core": "Platforms",
-    "NHS Pathways - Development Team": "Product Development",
-    "NHS Pathways - Reporting Team": "Product Development",
-    "111 Online - Developer": "Product Development",
-    "Cyber Security": "IT Operations (Including Cyber Security)",
-    "Core Infrastructure Services - Networks": "IT Operations (Including Cyber Security)",
-    "Core Infrastructure Services - Sustainable Hybrid Cloud": "IT Operations (Including Cyber Security)",
-    "Live Services - IT Operations Centre": "IT Operations (Including Cyber Security)",
-}
-
 PLACEMENTS_BY_DIRECTORATE_NAME = {
-    "Data Services": ["Adult Social Care Statistics",
-                      "Business Intelligence/Data Visualisation",
-                      "Data Management/Engineering", "Turing Tribe"],
-    "Platforms": ["Data Quality Dashboards", "Spine Core"],
-    "Product Development": ["NHS Pathways - Development Team",
-                            "NHS Pathways - Reporting Team",
-                            "111 Online - Developer"],
-    "IT Operations (Including Cyber Security)": ["Cyber Security",
-                                                 "Core Infrastructure Services - Networks",
-                                                 "Core Infrastructure Services - Sustainable Hybrid Cloud",
-                                                 "Live Services - IT Operations Centre"]
+    "Data Services": ["17 - Data Science Skilled Team",
+                      "18 - Adult Social Care Statistics",
+                      "19 - Business Intelligence (Dashboard) Team",
+                      "20 - Information Standards",
+                      "21 - Publications and Adhocs Development Team (Seacole Squad) in the Analytical Serivces: Population Health, Clinical Audit and Specialist Care tribe.",
+                      "22 - Secondary Care Scheduled Release Team",
+                      "23 - Analytical Insights (COVID Squad)",
+                      "24 - Lovelace squad (Archimedes tribe)",
+                      "25 - Analytical Insights (Prescribing)",
+                      "26 - SPL/Enhanced Protection Programme",
+                      "27 - Analytical Insights - Analytical Delivery Squad Number 2",
+                      "28 - Primary Care Domain",
+                      "29 - Various, within Data Engineering Skilled Team and as assigned by HoST for Data Engineering",
+                      "30 - Burden Reduction (automated data extraction + data ingest transformation programmes)",
+                      "31 - Population Health, Clinical Audit and Specialist Care (Turing Tribe)",
+                      "32 - Lovelace squad within Archimedes tribe",
+                      "33 - Babbage squad ( in the Archimedes tribe)"],
+    "Platforms": ["10 - Spine Core",
+                  "11 - Development Office",
+                  "12 - Risk Stratification",
+                  "13 - Business Operations", "40 - Risk Stratification"],
+    "Product Development": ["1 - NHS.UK",
+                            "2 - 111 online (UEC Digital Services)",
+                            "3 - Pathways",
+                            "4 - Content Modularisation Team (NHS UK)",
+                            "5 - NHS App",
+                            "7 - NHS Pathways",
+                            "8 - DoS Suite of products (Urgent & Emergency Care directorate)",
+                            "9 - Management Information Team, Product Implementation (PIRM)",
+                            "43 - Delivery Management Team, NHS Pathways",
+                            "45 - National Vaccination Booking Service",
+                            "46 - NHS.UK Campaigns Team",
+                            "47 - Clinical Safety"],
+    "IT Operations": ["14 - Cloud Centre of Excellence (Infrastructure Services)",
+                      "15 - INSTANT (Solution Assurance)",
+                      "16 - ITOC",
+                      "35 - Sub directorate: Core Infrastructure services- (Team: Infra Operations)",
+                      "37 - Data Operations Team",
+                      "38 - Future Connectivity (Infrastructure Services)",
+                      "41 - Vulnerability and Patching Team (Infrastructure Services)"],
+    "Cyber Security": ["34 - CSOC",
+                       "39 - Innovation and Delivery"],
+    "Assurance and Risk Management": ["42 - CPMO Standards & Investment",
+                                      "44 - Medical Device Directive Programme"]
 }
 
 
 class PreferenceMatcher():
 
-    def __init__(self, preferenceFileName, prevPreferencesFileName) -> None:
+    def __init__(self, preferenceFileName, prevPreferencesFileName, placementFileName) -> None:
         self.readPreferenceFile(preferenceFileName)
         self.readPreviousPreferences(prevPreferencesFileName)
+        self.readPlacementsFile(placementFileName)
+
+    def readPlacementsFile(self, placementFileName):
+        placementsFile = open(placementFileName, "r")
+        self.placements = json.load(placementsFile)
+        placementsFile.close()
 
     def readPreferenceFile(self, preferenceFileName):
         preferenceFile = open(preferenceFileName, "r")
@@ -57,23 +81,23 @@ class PreferenceMatcher():
 
     def extractPlacementNames(self, placements):
         placementNames = []
-        for k in placements:
-            if placements[k]["numberOfGrads"] > 1:
+        for placementName, placementData in placements.items():
+            if placementData["numberOfGrads"] > 1:
                 numberedNames = []
-                for i in range(1, placements[k]["numberOfGrads"]+1):
-                    numberedNames.append(f"{k}_{i}")
+                for i in range(1, placements[placementName]["numberOfGrads"]+1):
+                    numberedNames.append(f"{placementName}_{i}")
                 placementNames.extend(numberedNames)
             else:
-                placementNames.append(k)
+                placementNames.append(placementName)
         return placementNames
 
     def extractPeopleNames(self):
-        return [k for k in self.preferences["preferences"]]
+        return [k for k in self.preferences]
 
     def convertPreferencesToGraph(self):
         preferencesGraph = nx.Graph()
         self.placementNames = self.extractPlacementNames(
-            self.preferences["placements"])
+            self.placements)
         self.peopleNames = self.peopleNames = self.extractPeopleNames()
         preferencesGraph.add_nodes_from(self.placementNames)
         preferencesGraph.add_nodes_from(self.peopleNames)
@@ -89,15 +113,16 @@ class PreferenceMatcher():
         plt.show()
 
     def weightPlacement(self, graph, person, preference, weighting):
-        if self.preferences["placements"][preference]["numberOfGrads"] > 1:
-            for i in range(1, self.preferences["placements"][preference]["numberOfGrads"]+1):
+        if self.placements[preference]["numberOfGrads"] > 1:
+            for i in range(1, self.placements[preference]["numberOfGrads"]+1):
                 graph[person][f"{preference}_{i}"]["weight"] += weighting
         else:
             graph[person][preference]["weight"] += weighting
 
     def removePlacement(self, graph, person, preference):
-        if self.preferences["placements"][preference]["numberOfGrads"] > 1:
-            for i in range(1, self.preferences["placements"][preference]["numberOfGrads"]+1):
+        print(preference)
+        if self.placements[preference]["numberOfGrads"] > 1:
+            for i in range(1, self.placements[preference]["numberOfGrads"]+1):
                 graph.remove_edge(person, f"{preference}_{i}")
         else:
             graph.remove_edge(person, preference)
@@ -105,8 +130,7 @@ class PreferenceMatcher():
     def removePreviousDirectoratePlacements(self, graph):
         for k in self.previousPlacements:
             for person in self.peopleNames:
-                prevPlacement = self.previousPlacements[k][person]
-                prevDirectorate = DIRECTORATES_BY_PLACEMENT_NAME[prevPlacement]
+                prevDirectorate = self.previousPlacements[k][person]
                 placementsToRemove = PLACEMENTS_BY_DIRECTORATE_NAME[prevDirectorate]
                 for placementToRemove in placementsToRemove:
                     self.removePlacement(
@@ -114,9 +138,9 @@ class PreferenceMatcher():
 
     def applyPreferenceWeighting(self, graph):
         for person in self.peopleNames:
-            firstPreference = self.preferences["preferences"][person]["firstPreference"]
-            secondPreference = self.preferences["preferences"][person]["secondPreference"]
-            thirdPreference = self.preferences["preferences"][person]["thirdPreference"]
+            firstPreference = self.preferences[person]["firstPreference"]
+            secondPreference = self.preferences[person]["secondPreference"]
+            thirdPreference = self.preferences[person]["thirdPreference"]
             self.weightPlacement(
                 graph, person, firstPreference, 175)
             self.weightPlacement(
@@ -127,24 +151,27 @@ class PreferenceMatcher():
 
 if __name__ == "__main__":
     prefMatcher = PreferenceMatcher(
-        "preferences.json", "previousPlacements.json")
+        "preferences.json", "previousPlacements.json", "placements.json")
     preferenceGraph = prefMatcher.convertPreferencesToGraph()
     prefMatcher.applyPreferenceWeighting(preferenceGraph)
     prefMatcher.removePreviousDirectoratePlacements(preferenceGraph)
     matching = list(nx.max_weight_matching(preferenceGraph))
+    for i, match in enumerate(matching):
+        if not match[0] in prefMatcher.peopleNames:
+            matching[i] = (match[1], match[0])
+    no_preference_matchings = []
     for match in matching:
-        if match[0] in prefMatcher.peopleNames:
-            print(
-                f"""\n{match[0]} - {match[1]}:
-                1st:{prefMatcher.preferences['preferences'][match[0]]['firstPreference']}
-                2nd:{prefMatcher.preferences['preferences'][match[0]]['secondPreference']}
-                3rd:{prefMatcher.preferences['preferences'][match[0]]['thirdPreference']}""")
-        else:
-            print(
-                f"""\n{match[1]} - {match[0]}:
-                1st:{prefMatcher.preferences['preferences'][match[1]]['firstPreference']}
-                2nd:{prefMatcher.preferences['preferences'][match[1]]['secondPreference']}
-                3rd:{prefMatcher.preferences['preferences'][match[1]]['thirdPreference']}""")
+        if re.sub(r"_\d", "", match[1]) not in [prefMatcher.preferences[match[0]]['firstPreference'], prefMatcher.preferences[match[0]]['secondPreference'], prefMatcher.preferences[match[0]]['thirdPreference']]:
+            no_preference_matchings.append(match)
+        print(
+            f"""\n{match[0]} -> {match[1]}:
+                1st:{prefMatcher.preferences[match[0]]['firstPreference']}
+                2nd:{prefMatcher.preferences[match[0]]['secondPreference']}
+                3rd:{prefMatcher.preferences[match[0]]['thirdPreference']}""")
+
+    print("\nNo Preference Matched:")
+    for match in no_preference_matchings:
+        print(f"{match[0]} -> {match[1]}")
     nodes = [{'name': str(name), "id": name}
              for i, name in enumerate(preferenceGraph.nodes())]
     links = [{'source': u[0], 'target': u[1], "value": preferenceGraph.edges[u[0], u[1]]["weight"], "weight": preferenceGraph.edges[u[0], u[1]]["weight"]}

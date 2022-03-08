@@ -1,0 +1,165 @@
+{
+  "1 - NHS.UK": { "directorate": "Product Development", "numberOfGrads": 2 },
+  "2 - 111 online (UEC Digital Services)": {
+    "directorate": "Product Development",
+    "numberOfGrads": 2
+  },
+  "3 - Pathways": { "directorate": "Product Development", "numberOfGrads": 1 },
+  "4 - Content Modularisation Team (NHS UK)": {
+    "directorate": "Product Development",
+    "numberOfGrads": 1
+  },
+  "5 - NHS App": { "directorate": "Product Development", "numberOfGrads": 2 },
+  "7 - NHS Pathways": {
+    "directorate": "Product Development",
+    "numberOfGrads": 1
+  },
+  "8 - DoS Suite of products (Urgent & Emergency Care directorate)": {
+    "directorate": "Product Development",
+    "numberOfGrads": 5
+  },
+  "9 - Management Information Team, Product Implementation (PIRM)": {
+    "directorate": "Product Development",
+    "numberOfGrads": 1
+  },
+  "10 - Spine Core": { "directorate": "Platforms", "numberOfGrads": 1 },
+  "11 - Development Office": { "directorate": "Platforms", "numberOfGrads": 1 },
+  "12 - Risk Stratification": {
+    "directorate": "Platforms",
+    "numberOfGrads": 2
+  },
+  "13 - Business Operations": {
+    "directorate": "Platforms",
+    "numberOfGrads": 1
+  },
+  "14 - Cloud Centre of Excellence (Infrastructure Services)": {
+    "directorate": "IT Operations",
+    "numberOfGrads": 1
+  },
+  "15 - INSTANT (Solution Assurance)": {
+    "directorate": "IT Operations",
+    "numberOfGrads": 1
+  },
+  "16 - ITOC": { "directorate": "IT Operations", "numberOfGrads": 2 },
+  "17 - Data Science Skilled Team": {
+    "directorate": "Data Services",
+    "numberOfGrads": 3
+  },
+  "18 - Adult Social Care Statistics": {
+    "directorate": "Data Services",
+    "numberOfGrads": 2
+  },
+  "19 - Business Intelligence (Dashboard) Team": {
+    "directorate": "Data Services",
+    "numberOfGrads": 1
+  },
+  "20 - Information Standards": {
+    "directorate": "Data Services",
+    "numberOfGrads": 1
+  },
+  "21 - Publications and Adhocs Development Team (Seacole Squad) in the Analytical Serivces: Population Health, Clinical Audit and Specialist Care tribe.": {
+    "directorate": "Data Services",
+    "numberOfGrads": 1
+  },
+  "22 - Secondary Care Scheduled Release Team": {
+    "directorate": "Data Services",
+    "numberOfGrads": 1
+  },
+  "23 - Analytical Insights (COVID Squad)": {
+    "directorate": "Data Services",
+    "numberOfGrads": 1
+  },
+  "24 - Lovelace squad (Archimedes tribe)": {
+    "directorate": "Data Services",
+    "numberOfGrads": 1
+  },
+  "25 - Analytical Insights (Prescribing)": {
+    "directorate": "Data Services",
+    "numberOfGrads": 1
+  },
+  "26 - SPL/Enhanced Protection Programme": {
+    "directorate": "Data Services",
+    "numberOfGrads": 1
+  },
+  "27 - Analytical Insight - Analytical Delivery Squad Number 2": {
+    "directorate": "Data Services",
+    "numberOfGrads": 1
+  },
+  "28 - Primary Care Domain": {
+    "directorate": "Data Services",
+    "numberOfGrads": 2
+  },
+  "29 - Various, within Data Engineering Skilled Team and as assigned by HoST for Data Engineering": {
+    "directorate": "Data Services",
+    "numberOfGrads": 4
+  },
+  "30 - Burden Reduction (automated data extraction + data ingest transformation programmes)": {
+    "directorate": "Data Services",
+    "numberOfGrads": 2
+  },
+  "31 - Population Health, Clinical Audit and Specialist Care (Turing Tribe)": {
+    "directorate": "Data Services",
+    "numberOfGrads": 1
+  },
+  "32 - Lovelace squad within Archimedes tribe": {
+    "directorate": "Data Services",
+    "numberOfGrads": 2
+  },
+  "33 - Babbage squad (in the Archimedes tribe)": {
+    "directorate": "Data Services",
+    "numberOfGrads": 1
+  },
+  "34 - CSOC": { "directorate": "Cyber Security", "numberOfGrads": 2 },
+  "35 - Sub directorate: Core Infrastructure services- (Team: Infra Operations)": {
+    "directorate": "IT Operations",
+    "numberOfGrads": 1
+  },
+  "36 - Archimedes - Surveys": {
+    "directorate": "Data Services",
+    "numberOfGrads": 1
+  },
+  "37 - Data Operations Team": {
+    "directorate": "IT Operations",
+    "numberOfGrads": 1
+  },
+  "38 - Future Connectivity (Infrastructure Services)": {
+    "directorate": "IT Operations",
+    "numberOfGrads": 1
+  },
+  "39 - Innovation and Delivery": {
+    "directorate": "Cyber Security",
+    "numberOfGrads": 2
+  },
+  "40 - Risk Stratification": {
+    "directorate": "Platforms",
+    "numberOfGrads": 2
+  },
+  "41 - Vulnerability and Patching Team (Infrastructure Services)": {
+    "directorate": "IT Operations",
+    "numberOfGrads": 1
+  },
+  "42 - CPMO Standards & Investment": {
+    "directorate": "Assurance and Risk Management",
+    "numberOfGrads": 1
+  },
+  "43 - Delivery Management Team, NHS Pathways": {
+    "directorate": "Product Development",
+    "numberOfGrads": 1
+  },
+  "44 - Medical Device Directive Programme": {
+    "directorate": "Assurance and Risk Management",
+    "numberOfGrads": 2
+  },
+  "45 - National Vaccination Booking Service": {
+    "directorate": "Product Development",
+    "numberOfGrads": 1
+  },
+  "46 - NHS.UK Campaigns Team": {
+    "directorate": "Product Development",
+    "numberOfGrads": 1
+  },
+  "47 - Clinical Safety": {
+    "directorate": "Product Development",
+    "numberOfGrads": 1
+  }
+}
