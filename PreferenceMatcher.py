@@ -1,6 +1,7 @@
 import json
 import pprint as pp
 import re
+import sys
 import networkx as nx
 from networkx.readwrite import json_graph
 import itertools
@@ -20,13 +21,13 @@ PLACEMENTS_BY_DIRECTORATE_NAME = {
                       "24 - Lovelace squad (Archimedes tribe)",
                       "25 - Analytical Insights (Prescribing)",
                       "26 - SPL/Enhanced Protection Programme",
-                      "27 - Analytical Insights - Analytical Delivery Squad Number 2",
+                      "27 - Analytical Insight - Analytical Delivery Squad Number 2",
                       "28 - Primary Care Domain",
                       "29 - Various, within Data Engineering Skilled Team and as assigned by HoST for Data Engineering",
                       "30 - Burden Reduction (automated data extraction + data ingest transformation programmes)",
                       "31 - Population Health, Clinical Audit and Specialist Care (Turing Tribe)",
                       "32 - Lovelace squad within Archimedes tribe",
-                      "33 - Babbage squad ( in the Archimedes tribe)"],
+                      "33 - Babbage squad (in the Archimedes tribe)"],
     "Platforms": ["10 - Spine Core",
                   "11 - Development Office",
                   "12 - Risk Stratification",
@@ -120,7 +121,6 @@ class PreferenceMatcher():
             graph[person][preference]["weight"] += weighting
 
     def removePlacement(self, graph, person, preference):
-        print(preference)
         if self.placements[preference]["numberOfGrads"] > 1:
             for i in range(1, self.placements[preference]["numberOfGrads"]+1):
                 graph.remove_edge(person, f"{preference}_{i}")
@@ -136,48 +136,55 @@ class PreferenceMatcher():
                     self.removePlacement(
                         graph, person, placementToRemove)
 
-    def applyPreferenceWeighting(self, graph):
+    def applyPreferenceWeighting(self, graph, weightings):
         for person in self.peopleNames:
             firstPreference = self.preferences[person]["firstPreference"]
             secondPreference = self.preferences[person]["secondPreference"]
             thirdPreference = self.preferences[person]["thirdPreference"]
             self.weightPlacement(
-                graph, person, firstPreference, 175)
+                graph, person, firstPreference, weightings[0])
             self.weightPlacement(
-                graph, person, secondPreference, 100)
+                graph, person, secondPreference, weightings[1])
             self.weightPlacement(
-                graph, person, thirdPreference, 75)
+                graph, person, thirdPreference, weightings[2])
 
 
 if __name__ == "__main__":
+    if len(sys.argv) < 4:
+        print("Weightings must be given in a list format e.g [100, 75, 50]")
+        sys.exit()
+    else:
+        weightings = [int(weighting) for weighting in [
+            sys.argv[1], sys.argv[2], sys.argv[3]]]
     prefMatcher = PreferenceMatcher(
         "preferences.json", "previousPlacements.json", "placements.json")
     preferenceGraph = prefMatcher.convertPreferencesToGraph()
-    prefMatcher.applyPreferenceWeighting(preferenceGraph)
+    prefMatcher.applyPreferenceWeighting(preferenceGraph, weightings)
     prefMatcher.removePreviousDirectoratePlacements(preferenceGraph)
     matching = list(nx.max_weight_matching(preferenceGraph))
     for i, match in enumerate(matching):
         if not match[0] in prefMatcher.peopleNames:
             matching[i] = (match[1], match[0])
     no_preference_matchings = []
-    for match in matching:
-        if re.sub(r"_\d", "", match[1]) not in [prefMatcher.preferences[match[0]]['firstPreference'], prefMatcher.preferences[match[0]]['secondPreference'], prefMatcher.preferences[match[0]]['thirdPreference']]:
-            no_preference_matchings.append(match)
-        print(
-            f"""\n{match[0]} -> {match[1]}:
-                1st:{prefMatcher.preferences[match[0]]['firstPreference']}
-                2nd:{prefMatcher.preferences[match[0]]['secondPreference']}
-                3rd:{prefMatcher.preferences[match[0]]['thirdPreference']}""")
+    with open(f"preferenceOutput-{weightings}.txt", "w") as file:
 
-    print("\nNo Preference Matched:")
-    for match in no_preference_matchings:
-        print(f"{match[0]} -> {match[1]}")
+        for match in matching:
+            if re.sub(r"_\d", "", match[1]) not in [prefMatcher.preferences[match[0]]['firstPreference'], prefMatcher.preferences[match[0]]['secondPreference'], prefMatcher.preferences[match[0]]['thirdPreference']]:
+                no_preference_matchings.append(match)
+            file.write(f"""\n{match[0]} -> {match[1]}:
+                    1st:{prefMatcher.preferences[match[0]]['firstPreference']}
+                    2nd:{prefMatcher.preferences[match[0]]['secondPreference']}
+                    3rd:{prefMatcher.preferences[match[0]]['thirdPreference']}""")
+
+        file.write("\nNo Preference Matched:")
+        for match in no_preference_matchings:
+            file.write(f"{match[0]} -> {match[1]}")
     nodes = [{'name': str(name), "id": name}
              for i, name in enumerate(preferenceGraph.nodes())]
     links = [{'source': u[0], 'target': u[1], "value": preferenceGraph.edges[u[0], u[1]]["weight"], "weight": preferenceGraph.edges[u[0], u[1]]["weight"]}
              for u in preferenceGraph.edges()]
     nodesWithNeighbours = {node: [
         neighbour for neighbour in preferenceGraph.neighbors(node)] for node in preferenceGraph.nodes()}
-    with open('graph.json', 'w') as f:
+    with open(f'graph{weightings}.json', 'w') as f:
         json.dump({'nodes': nodes, 'links': links, "people": prefMatcher.peopleNames, "placements": prefMatcher.placementNames, "nodesWithNeighbours": nodesWithNeighbours},
                   f, indent=4,)

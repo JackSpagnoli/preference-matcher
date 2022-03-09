@@ -1,17 +1,92 @@
 {
-  "Amelia Noonan": {
-    "firstPreference": "17 - Data Science Skilled Team",
-    "secondPreference": "22 - Secondary Care Scheduled Release Team",
+  "Scott Caldwell-Nichols": {
+    "firstPreference": "3 - Pathways",
+    "secondPreference": "39 - Innovation and Delivery",
+    "thirdPreference": "15 - INSTANT (Solution Assurance)"
+  },
+  "Mitul Dattani": {
+    "firstPreference": "5 - NHS App",
+    "secondPreference": "2 - 111 online (UEC Digital Services)",
+    "thirdPreference": "10 - Spine Core"
+  },
+  "Laura Thrift": {
+    "firstPreference": "34 - CSOC",
+    "secondPreference": "15 - INSTANT (Solution Assurance)",
     "thirdPreference": "3 - Pathways"
+  },
+  "Anna Evans": {
+    "firstPreference": "17 - Data Science Skilled Team",
+    "secondPreference": "44 - Medical Device Directive Programme",
+    "thirdPreference": "28 - Primary Care Domain"
   },
   "Nathan Pettit": {
     "firstPreference": "14 - Cloud Centre of Excellence (Infrastructure Services)",
     "secondPreference": "39 - Innovation and Delivery",
     "thirdPreference": "29 - Various, within Data Engineering Skilled Team and as assigned by HoST for Data Engineering"
   },
+  "Joel Helbling": {
+    "firstPreference": "18 - Adult Social Care Statistics",
+    "secondPreference": "12 - Risk Stratification",
+    "thirdPreference": "29 - Various, within Data Engineering Skilled Team and as assigned by HoST for Data Engineering"
+  },
+  "Benjamin Wallace": {
+    "firstPreference": "15 - INSTANT (Solution Assurance)",
+    "secondPreference": "5 - NHS App",
+    "thirdPreference": "1 - NHS.UK"
+  },
+  "Abbie Prescott": {
+    "firstPreference": "34 - CSOC",
+    "secondPreference": "17 - Data Science Skilled Team",
+    "thirdPreference": "39 - Innovation and Delivery"
+  },
+  "Amaan Ibn-Nasar": {
+    "firstPreference": "18 - Adult Social Care Statistics",
+    "secondPreference": "1 - NHS.UK",
+    "thirdPreference": "15 - INSTANT (Solution Assurance)"
+  },
+  "Maisie Blyth": {
+    "firstPreference": "39 - Innovation and Delivery",
+    "secondPreference": "15 - INSTANT (Solution Assurance)",
+    "thirdPreference": "34 - CSOC"
+  },
+  "Alice Tapper": {
+    "firstPreference": "5 - NHS App",
+    "secondPreference": "2 - 111 online (UEC Digital Services)",
+    "thirdPreference": "1 - NHS.UK"
+  },
+  "Zahra Ahmed": {
+    "firstPreference": "34 - CSOC",
+    "secondPreference": "23 - Analytical Insights (COVID Squad)",
+    "thirdPreference": "17 - Data Science Skilled Team"
+  },
   "Joseph Wilson": {
     "firstPreference": "3 - Pathways",
     "secondPreference": "34 - CSOC",
     "thirdPreference": "19 - Business Intelligence (Dashboard) Team"
+  },
+  "Nathan Gregory": {
+    "firstPreference": "39 - Innovation and Delivery",
+    "secondPreference": "34 - CSOC",
+    "thirdPreference": "15 - INSTANT (Solution Assurance)"
+  },
+  "Oluwadamiloju Makinde": {
+    "firstPreference": "34 - CSOC",
+    "secondPreference": "30 - Burden Reduction (automated data extraction + data ingest transformation programmes)",
+    "thirdPreference": "15 - INSTANT (Solution Assurance)"
+  },
+  "Amelia Noonan": {
+    "firstPreference": "17 - Data Science Skilled Team",
+    "secondPreference": "22 - Secondary Care Scheduled Release Team",
+    "thirdPreference": "15 - INSTANT (Solution Assurance)"
+  },
+  "Roshaan Bajwa": {
+    "firstPreference": "5 - NHS App",
+    "secondPreference": "2 - 111 online (UEC Digital Services)",
+    "thirdPreference": "14 - Cloud Centre of Excellence (Infrastructure Services)"
+  },
+  "Adam Carruthers": {
+    "firstPreference": "18 - Adult Social Care Statistics",
+    "secondPreference": "11 - Development Office",
+    "thirdPreference": "23 - Analytical Insights (COVID Squad)"
   }
 }
