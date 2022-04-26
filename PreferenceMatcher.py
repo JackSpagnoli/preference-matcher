@@ -3,12 +3,8 @@ import pprint as pp
 import re
 import sys
 import networkx as nx
-from networkx.readwrite import json_graph
 import itertools
 import matplotlib.pyplot as plt
-from d3graph import d3graph, vec2adjmat
-import pandas as pd
-import numpy as np
 
 PLACEMENTS_BY_DIRECTORATE_NAME = {
     "Data Services": ["17 - Data Science Skilled Team",
@@ -64,7 +60,17 @@ class PreferenceMatcher():
         self.readPreferenceFile(preferenceFileName)
         self.readPreviousPreferences(prevPreferencesFileName)
         self.readPlacementsFile(placementFileName)
+        self.createTagDataStructure()
 
+    def createTagDataStructure(self):
+        self.placementsByTag = {}
+        for placementName, placementData in self.placements.items():
+            for tag in placementData["tags"]:
+                if tag in self.placementsByTag:
+                    self.placementsByTag[tag].append(placementName)
+                else:
+                    self.placementsByTag[tag] = [placementName]
+    
     def readPlacementsFile(self, placementFileName):
         placementsFile = open(placementFileName, "r")
         self.placements = json.load(placementsFile)
@@ -113,12 +119,9 @@ class PreferenceMatcher():
         nx.draw_networkx_edge_labels(graph, pos, edge_labels=labels)
         plt.show()
 
-    def weightPlacement(self, graph, person, preference, weighting):
-        if self.placements[preference]["numberOfGrads"] > 1:
-            for i in range(1, self.placements[preference]["numberOfGrads"]+1):
-                graph[person][f"{preference}_{i}"]["weight"] += weighting
-        else:
-            graph[person][preference]["weight"] += weighting
+    def weightPlacement(self, graph, person, placementsToWeight, weighting):
+        for placementName in placementsToWeight:    
+            graph[person][placementName]["weight"] += weighting
 
     def removePlacement(self, graph, person, preference):
         if self.placements[preference]["numberOfGrads"] > 1:
@@ -136,22 +139,39 @@ class PreferenceMatcher():
                     self.removePlacement(
                         graph, person, placementToRemove)
 
+    def extractPlacementsFromPreference(self, preference):
+        placementsToWeight = []
+        placementsToCheckNumOfGrads = []
+        preferenceIsATag = preference in self.placementsByTag
+        if preferenceIsATag:
+            placementsToCheckNumOfGrads.extend(self.placementsByTag[preference])
+        else:
+            placementsToCheckNumOfGrads.append(preference)
+        for placementToCheck in placementsToCheckNumOfGrads:
+            placementCanTakeMultipleGrads = self.placements[placementToCheck]["numberOfGrads"] > 1
+            if placementCanTakeMultipleGrads:
+                for i in range(1, self.placements[placementToCheck]["numberOfGrads"]+1):
+                    placementsToWeight.append(f"{placementToCheck}_{i}")
+            else:
+                placementsToWeight.append(placementToCheck)
+        return placementsToWeight
+    
     def applyPreferenceWeighting(self, graph, weightings):
         for person in self.peopleNames:
-            firstPreference = self.preferences[person]["firstPreference"]
-            secondPreference = self.preferences[person]["secondPreference"]
-            thirdPreference = self.preferences[person]["thirdPreference"]
+            firstPlacementsToWeight = self.extractPlacementsFromPreference(self.preferences[person]["firstPreference"])
+            secondPlacementsToWeight = self.extractPlacementsFromPreference(self.preferences[person]["secondPreference"])
+            thirdPlacementsToWeight = self.extractPlacementsFromPreference(self.preferences[person]["thirdPreference"])
             self.weightPlacement(
-                graph, person, firstPreference, weightings[0])
+                graph, person, firstPlacementsToWeight, weightings[0])
             self.weightPlacement(
-                graph, person, secondPreference, weightings[1])
+                graph, person, secondPlacementsToWeight, weightings[1])
             self.weightPlacement(
-                graph, person, thirdPreference, weightings[2])
+                graph, person, thirdPlacementsToWeight, weightings[2])
 
 
 if __name__ == "__main__":
     if len(sys.argv) < 4:
-        print("Weightings must be given in a list format e.g [100, 75, 50]")
+        print("Weightings must be given in a list format e.g 100 75 50")
         sys.exit()
     else:
         weightings = [int(weighting) for weighting in [
