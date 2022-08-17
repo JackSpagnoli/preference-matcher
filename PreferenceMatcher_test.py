@@ -12,49 +12,49 @@ class PreferenceMatcherTest(unittest.TestCase):
             "placements": {
                 "Adult Social Care Statistics": {
                     "directorate": "Data Services",
-                    "numberOfGrads": 1,
+                    "number_of_grads": 1,
                 },
                 "Business Intelligence/Data Visualisation": {
                     "directorate": "Data Services",
-                    "numberOfGrads": 1,
+                    "number_of_grads": 1,
                 },
                 "Data Management/Engineering": {
                     "directorate": "Data Services",
-                    "numberOfGrads": 2,
+                    "number_of_grads": 2,
                 },
-                "Turing Tribe": {"directorate": "Data Services", "numberOfGrads": 1},
+                "Turing Tribe": {"directorate": "Data Services", "number_of_grads": 1},
                 "Data Quality Dashboards": {
                     "directorate": "Platforms",
-                    "numberOfGrads": 2,
+                    "number_of_grads": 2,
                 },
-                "Spine Core": {"directorate": "Platforms", "numberOfGrads": 3},
+                "Spine Core": {"directorate": "Platforms", "number_of_grads": 3},
                 "NHS Pathways - Development Team": {
                     "directorate": "Product Development",
-                    "numberOfGrads": 1,
+                    "number_of_grads": 1,
                 },
                 "NHS Pathways - Reporting Team": {
                     "directorate": "Product Development",
-                    "numberOfGrads": 1,
+                    "number_of_grads": 1,
                 },
                 "111 Online - Developer": {
                     "directorate": "Product Development",
-                    "numberOfGrads": 1,
+                    "number_of_grads": 1,
                 },
                 "Cyber Security": {
                     "directorate": "IT Operations (Including Cyber Security)",
-                    "numberOfGrads": 1,
+                    "number_of_grads": 1,
                 },
                 "Core Infrastructure Services - Networks": {
                     "directorate": "IT Operations (Including Cyber Security)",
-                    "numberOfGrads": 1,
+                    "number_of_grads": 1,
                 },
                 "Core Infrastructure Services - Sustainable Hybrid Cloud": {
                     "directorate": "IT Operations (Including Cyber Security)",
-                    "numberOfGrads": 1,
+                    "number_of_grads": 1,
                 },
                 "Live Services - IT Operations Centre": {
                     "directorate": "IT Operations (Including Cyber Security)",
-                    "numberOfGrads": 2,
+                    "number_of_grads": 2,
                 },
             },
             "preferences": {
@@ -154,21 +154,21 @@ class PreferenceMatcherTest(unittest.TestCase):
             "placements": {
                 "Adult Social Care Statistics": {
                     "directorate": "Data Services",
-                    "numberOfGrads": 1,
+                    "number_of_grads": 1,
                 },
                 "Business Intelligence/Data Visualisation": {
                     "directorate": "Data Services",
-                    "numberOfGrads": 1,
+                    "number_of_grads": 1,
                 },
-                "Turing Tribe": {"directorate": "Data Services", "numberOfGrads": 1},
-                "Spine Core": {"directorate": "Platforms", "numberOfGrads": 3},
+                "Turing Tribe": {"directorate": "Data Services", "number_of_grads": 1},
+                "Spine Core": {"directorate": "Platforms", "number_of_grads": 3},
                 "111 Online - Developer": {
                     "directorate": "Product Development",
-                    "numberOfGrads": 1,
+                    "number_of_grads": 1,
                 },
                 "Cyber Security": {
                     "directorate": "IT Operations (Including Cyber Security)",
-                    "numberOfGrads": 1,
+                    "number_of_grads": 1,
                 },
             },
             "preferences": {
@@ -184,7 +184,7 @@ class PreferenceMatcherTest(unittest.TestCase):
                 },
             },
         }
-        self.preferencesGraph = self.preferenceMatcher.convertPreferencesToGraph()
+        self.preferencesGraph = self.preferenceMatcher.convert_preferences_to_graph()
 
     def test_addPlacementNodesToGraph(self):
         placements = [
@@ -197,14 +197,14 @@ class PreferenceMatcherTest(unittest.TestCase):
             "111 Online - Developer",
             "Cyber Security",
         ]
-        actualPlacements = self.preferenceMatcher.extractPlacementNames(
+        actualPlacements = self.preferenceMatcher.extract_placement_names(
             self.simplifiedPreferencesObj["placements"]
         )
         self.assertEqual(placements, actualPlacements)
 
     def test_addPeopleNodesToGraph(self):
         people = ["Amaan Ibn-Nasar", "Alice Tapper"]
-        actualPeople = self.preferenceMatcher.extractPeopleNames()
+        actualPeople = self.preferenceMatcher.extract_people_names()
         self.assertEqual(people, actualPeople)
 
     def test_convertPlacementsToGraph(self):
@@ -252,7 +252,7 @@ class PreferenceMatcherTest(unittest.TestCase):
         self.assertEqual(list(self.preferencesGraph.edges()), expectedEdges)
 
     def test_applyPreferenceWeighting(self):
-        self.preferenceMatcher.applyPreferenceWeighting(self.preferencesGraph)
+        self.preferenceMatcher.apply_preference - weighting(self.preferencesGraph)
         amaanWeights = [
             v["weight"] for _, v in self.preferencesGraph["Amaan Ibn-Nasar"].items()
         ]
@@ -307,7 +307,7 @@ class PreferenceMatcherTest(unittest.TestCase):
         )
 
     def test_weightPlacement(self):
-        self.preferenceMatcher.weightPlacement(
+        self.preferenceMatcher.weight_placement(
             self.preferencesGraph, "Amaan Ibn-Nasar", "Spine Core", 75
         )
         amaanWeights = [
@@ -336,7 +336,7 @@ class PreferenceMatcherTest(unittest.TestCase):
             ],
             amaanWeights,
         )
-        self.preferenceMatcher.weightPlacement(
+        self.preferenceMatcher.weight_placement(
             self.preferencesGraph, "Amaan Ibn-Nasar", "Adult Social Care Statistics", 50
         )
         amaanWeights = [
@@ -367,7 +367,7 @@ class PreferenceMatcherTest(unittest.TestCase):
         )
 
     def test_removePreviousDirectoratePlacements(self):
-        self.preferenceMatcher.removePreviousDirectoratePlacements(
+        self.preferenceMatcher.remove_previous_directorate_placements(
             self.preferencesGraph
         )
         amaanWeights = [

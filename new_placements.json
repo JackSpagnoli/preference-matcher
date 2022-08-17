@@ -1,7 +1,7 @@
 {
   "0 - Babbage Squad - Archimedes Tribe": {
     "directorate": "Data Services",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": [
       "Data Access Environment (DAE)",
       "Data Analytics",
@@ -18,7 +18,7 @@
   },
   "1 - Turing squad": {
     "directorate": "Data Services",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": [
       "AWS",
       "Data Access Environment (DAE)",
@@ -39,7 +39,7 @@
   },
   "2 - Management Information Team": {
     "directorate": "Product Development",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": [
       "Data Analytics",
       "Data Linkage",
@@ -52,7 +52,7 @@
   },
   "3 - Nightingale squad": {
     "directorate": "Data Services",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": [
       "Data Access Environment (DAE)",
       "Data Analytics",
@@ -70,12 +70,12 @@
   },
   "4 - Digital Transformation of Screening": {
     "directorate": "Product Development",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": ["Excel"]
   },
   "5 - Bowel Cancer Screening": {
     "directorate": "Product Development",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": [
       "App Development",
       "AWS",
@@ -96,7 +96,7 @@
   },
   "6 - SDE Platform Team": {
     "directorate": "Data Services",
-    "numberOfGrads": 2,
+    "number_of_grads": 2,
     "tags": [
       "AWS",
       "CI/CD",
@@ -117,12 +117,12 @@
   },
   "7 - Screening Programme (Digital Transformation of Screening and Live Screening Services)": {
     "directorate": "Product Development",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": []
   },
   "8 - Analytical Services: Population Health, Clinical Audit and Specialist Care (Seacole squad)": {
     "directorate": "Data Services",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": [
       "Big Data",
       "Data Access Environment (DAE)",
@@ -149,7 +149,7 @@
   },
   "9 - Lovelace Squad": {
     "directorate": "Data Services",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": [
       "Data Analytics",
       "Data Engineering",
@@ -173,7 +173,7 @@
   },
   "10 - Data Visualisation & Insights - Analytical Insights Service": {
     "directorate": "Data Services",
-    "numberOfGrads": 2,
+    "number_of_grads": 2,
     "tags": [
       "Big Data",
       "Data Access Environment (DAE)",
@@ -189,7 +189,7 @@
   },
   "11 - Cohorting & Data Linkage - Analytical Insights Service": {
     "directorate": "Data Services",
-    "numberOfGrads": 2,
+    "number_of_grads": 2,
     "tags": [
       "Big Data",
       "Data Access Environment (DAE)",
@@ -205,7 +205,7 @@
   },
   "12 - Lovelace (in Archimedes tribe)": {
     "directorate": "Data Services",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": [
       "Data Access Environment (DAE)",
       "Data Analytics",
@@ -221,7 +221,7 @@
   },
   "13 - ITOC Onboarding / Development ": {
     "directorate": "IT Operations",
-    "numberOfGrads": 2,
+    "number_of_grads": 2,
     "tags": [
       "APIs",
       "App Development",
@@ -236,7 +236,7 @@
   },
   "14 - DoS & DoS Integration team": {
     "directorate": "Product Development",
-    "numberOfGrads": 3,
+    "number_of_grads": 3,
     "tags": [
       "APIs",
       "App Development",
@@ -265,12 +265,12 @@
   },
   "15 - DoS Integration": {
     "directorate": "Product Development",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": ["Data Analytics", "Excel"]
   },
   "16 - Developer / DoS Features": {
     "directorate": "Product Development",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": [
       "APIs",
       "App Development",
@@ -298,7 +298,7 @@
   },
   "17 - Test / DoS Features / Live Service": {
     "directorate": "Product Development",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": [
       "APIs",
       "App Development",
@@ -326,7 +326,7 @@
   },
   "18 - 111 online": {
     "directorate": "Product Development",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": [
       "APIs",
       "Azure",
@@ -339,7 +339,7 @@
   },
   "19 - 111 online": {
     "directorate": "Product Development",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": [
       "APIs",
       "Azure",
@@ -352,7 +352,7 @@
   },
   "20 - Data Science Skilled Team - MPS": {
     "directorate": "Data Services",
-    "numberOfGrads": 2,
+    "number_of_grads": 2,
     "tags": [
       "Big Data",
       "CI/CD",
@@ -376,7 +376,7 @@
   },
   "21 - Data Science / Artificial Data": {
     "directorate": "Data Services",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": [
       "Big Data",
       "CI/CD",
@@ -399,7 +399,7 @@
   },
   "22 - Data Science / RAP": {
     "directorate": "Data Services",
-    "numberOfGrads": 2,
+    "number_of_grads": 2,
     "tags": [
       "Big Data",
       "CI/CD",
@@ -422,7 +422,7 @@
   },
   "23 - Data Science / Business Intelligence": {
     "directorate": "Data Services",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": [
       "APIs",
       "AWS",
@@ -443,7 +443,7 @@
   },
   "24 - Data Science / covid patient pathways": {
     "directorate": "Data Services",
-    "numberOfGrads": 2,
+    "number_of_grads": 2,
     "tags": [
       "Big Data",
       "Data Access Environment (DAE)",
@@ -466,7 +466,7 @@
   },
   "25 - Data Science / TRE Data Wranglers": {
     "directorate": "Data Services",
-    "numberOfGrads": 2,
+    "number_of_grads": 2,
     "tags": [
       "Big Data",
       "Data Access Environment (DAE)",
@@ -488,17 +488,17 @@
   },
   "26 - Vaccinations Programme, Tech & Data Delivery Team": {
     "directorate": "Product Development",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": []
   },
   "27 - Vaccinations - National Booking Service": {
     "directorate": "Product Development",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": []
   },
   "28 - Analytical Insights": {
     "directorate": "Data Services",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": [
       "Data Analytics",
       "Databricks",
@@ -512,7 +512,7 @@
   },
   "29 - Data Engineering": {
     "directorate": "Data Services",
-    "numberOfGrads": 5,
+    "number_of_grads": 5,
     "tags": [
       "Data Access Environment (DAE)",
       "Databricks",
@@ -529,17 +529,17 @@
   },
   "30 - UEC Data, Digital Urgent & Emergency Care": {
     "directorate": "Product Development",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": []
   },
   "31 - Child Protection Information Sharing (CP-IS)": {
     "directorate": "Product Development",
-    "numberOfGrads": 3,
+    "number_of_grads": 3,
     "tags": ["Development", "DevOps", "Excel"]
   },
   "32 - Electronic Prescription Service (Team Epsilon)": {
     "directorate": "Platforms",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": [
       "APIs",
       "AWS",
@@ -556,7 +556,7 @@
   },
   "33 - API Management ": {
     "directorate": "Platforms",
-    "numberOfGrads": 3,
+    "number_of_grads": 3,
     "tags": [
       "APIs",
       "Azure",
@@ -576,12 +576,12 @@
   },
   "34 - API Management": {
     "directorate": "Platforms",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": ["Excel"]
   },
   "35 - Primary Care Registration Management": {
     "directorate": "Platforms",
-    "numberOfGrads": 5,
+    "number_of_grads": 5,
     "tags": [
       "App Development",
       "CI/CD",
@@ -598,17 +598,17 @@
   },
   "36 - Infra Ops": {
     "directorate": "IT Operations",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": []
   },
   "37 - Specialist Security Services": {
     "directorate": "Cyber Operations",
-    "numberOfGrads": 1,
+    "number_of_grads": 1,
     "tags": ["Cyber Security"]
   },
   "38 - Cyber Security Operations Centre (CSOC)": {
     "directorate": "Cyber Operations",
-    "numberOfGrads": 5,
+    "number_of_grads": 5,
     "tags": ["AWS", "Azure", "Cyber Security", "Splunk"]
   }
 }
