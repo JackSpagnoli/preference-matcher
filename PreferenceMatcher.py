@@ -55,10 +55,11 @@ PLACEMENTS_BY_DIRECTORATE_NAME = {
         "38 - Cyber Security Operations Centre (CSOC)",
     ],
 }
+PATH_TO_INPUT_FILES = "./input_files/"
 
 
 def convert_json_to_dict_from_file(filename: str) -> dict[str, Any]:
-    with open(filename) as f:
+    with open(PATH_TO_INPUT_FILES + filename) as f:
         return json.load(f)
 
 
@@ -190,7 +191,7 @@ if __name__ == "__main__":
         if not match[0] in pref_matcher.people_names:
             matching[i] = (match[1], match[0])
     no_preference_matchings = []
-    with open(f"preferenceOutput-{weightings}.txt", "w") as file:
+    with open(f"./output/preferenceOutput-{weightings}.txt", "w") as file:
 
         for match in matching:
             if re.sub(r"_\d", "", match[1]) not in [
@@ -209,32 +210,3 @@ if __name__ == "__main__":
         file.write("\nNo Preference Matched:")
         for match in no_preference_matchings:
             file.write(f"{match[0]} -> {match[1]}")
-    nodes = [
-        {"name": str(name), "id": name}
-        for i, name in enumerate(preference_graph.nodes())
-    ]
-    links = [
-        {
-            "source": u[0],
-            "target": u[1],
-            "value": preference_graph.edges[u[0], u[1]]["weight"],
-            "weight": preference_graph.edges[u[0], u[1]]["weight"],
-        }
-        for u in preference_graph.edges()
-    ]
-    nodes_with_neighbours = {
-        node: [neighbour for neighbour in preference_graph.neighbors(node)]
-        for node in preference_graph.nodes()
-    }
-    with open(f"graph{weightings}.json", "w") as f:
-        json.dump(
-            {
-                "nodes": nodes,
-                "links": links,
-                "people": pref_matcher.people_names,
-                "placements": pref_matcher.placement_names,
-                "nodesWithNeighbours": nodes_with_neighbours,
-            },
-            f,
-            indent=4,
-        )

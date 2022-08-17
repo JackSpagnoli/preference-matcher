@@ -252,7 +252,7 @@ class PreferenceMatcherTest(unittest.TestCase):
         self.assertEqual(list(self.preferencesGraph.edges()), expectedEdges)
 
     def test_applyPreferenceWeighting(self):
-        self.preferenceMatcher.apply_preference - weighting(self.preferencesGraph)
+        self.preferenceMatcher.apply_preference_weighting(self.preferencesGraph)
         amaanWeights = [
             v["weight"] for _, v in self.preferencesGraph["Amaan Ibn-Nasar"].items()
         ]
