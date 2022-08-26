@@ -7,7 +7,7 @@
   "2": {
     "firstPreference": "Python",
     "secondPreference": "Cyber Security",
-    "thirdPreference": "PowerBI"
+    "thirdPreference": "Power BI"
   },
   "3": {
     "firstPreference": "Development",
@@ -16,7 +16,7 @@
   },
   "4": {
     "firstPreference": "Cyber Security",
-    "secondPreference": "development",
+    "secondPreference": "Development",
     "thirdPreference": "Python"
   },
   "5": {
@@ -62,7 +62,7 @@
   "13": {
     "firstPreference": "Cyber Security",
     "secondPreference": "Python",
-    "thirdPreference": "C#."
+    "thirdPreference": "C#"
   },
   "14": {
     "firstPreference": "AWS",
@@ -91,67 +91,112 @@
   },
   "19": {
     "firstPreference": "Development",
-    "secondPreference": "11 - Development Office",
-    "thirdPreference": "23 - Analytical Insights (COVID Squad)"
+    "secondPreference": "Data Analytics",
+    "thirdPreference": "Web Development"
   },
   "20": {
-    "firstPreference": "18 - Adult Social Care Statistics",
-    "secondPreference": "11 - Development Office",
-    "thirdPreference": "23 - Analytical Insights (COVID Squad)"
+    "firstPreference": "Cyber Security",
+    "secondPreference": "Development",
+    "thirdPreference": "AWS"
+  },
+  "21": {
+    "firstPreference": "Cyber Security",
+    "secondPreference": "Development",
+    "thirdPreference": "Web Development"
+  },
+  "22": {
+    "firstPreference": "Cyber Security",
+    "secondPreference": "AWS",
+    "thirdPreference": "Azure"
+  },
+  "23": {
+    "firstPreference": "Data Analytics",
+    "secondPreference": "Data Visualisation",
+    "thirdPreference": "Python"
+  },
+  "24": {
+    "firstPreference": "Development",
+    "secondPreference": "App Development",
+    "thirdPreference": "Web Development"
+  },
+  "25": {
+    "firstPreference": "AWS",
+    "secondPreference": "Azure",
+    "thirdPreference": "APIs"
+  },
+  "26": {
+    "firstPreference": "Cyber Security",
+    "secondPreference": "Development",
+    "thirdPreference": "AWS"
+  },
+  "27": {
+    "firstPreference": "Development",
+    "secondPreference": "Cyber Security",
+    "thirdPreference": "AWS"
+  },
+  "28": {
+    "firstPreference": "Data Science",
+    "secondPreference": "Machine Learning",
+    "thirdPreference": "Development"
+  },
+  "29": {
+    "firstPreference": "Data Analytics",
+    "secondPreference": "Data Visualisation",
+    "thirdPreference": "Python"
   },
   "30": {
-    "firstPreference": "39 - Innovation and Delivery",
-    "secondPreference": "15 - INSTANT (Solution Assurance)",
-    "thirdPreference": "34 - CSOC"
+    "firstPreference": "Data Analytics",
+    "secondPreference": "Data Science",
+    "thirdPreference": "Cyber Security"
   },
   "31": {
-    "firstPreference": "5 - NHS App",
-    "secondPreference": "2 - 111 online (UEC Digital Services)",
-    "thirdPreference": "1 - NHS.UK"
+    "firstPreference": "Cyber Security",
+    "secondPreference": "Development",
+    "thirdPreference": "Web Development"
   },
   "32": {
-    "firstPreference": "34 - CSOC",
-    "secondPreference": "23 - Analytical Insights (COVID Squad)",
-    "thirdPreference": "17 - Data Science Skilled Team"
+    "firstPreference": "Development",
+    "secondPreference": "Reproducible Analytical Pipelines (RAP)",
+    "thirdPreference": "Data Analytics"
   },
   "33": {
-    "firstPreference": "3 - Pathways",
-    "secondPreference": "19 - Business Intelligence (Dashboard) Team",
-    "thirdPreference": "21 - Publications and Adhocs Development Team (Seacole Squad) in the Analytical Serivces: Population Health, Clinical Audit and Specialist Care tribe."
+    "firstPreference": "Cyber Security",
+    "secondPreference": "C#",
+    "thirdPreference": "Development"
   },
   "34": {
-    "firstPreference": "39 - Innovation and Delivery",
-    "secondPreference": "34 - CSOC",
-    "thirdPreference": "15 - INSTANT (Solution Assurance)"
+    "firstPreference": "Data Analytics",
+    "secondPreference": "Data Engineering",
+    "thirdPreference": "Data Visualisation"
   },
   "35": {
-    "firstPreference": "34 - CSOC",
-    "secondPreference": "30 - Burden Reduction (automated data extraction + data ingest transformation programmes)",
-    "thirdPreference": "15 - INSTANT (Solution Assurance)"
+    "firstPreference": "Data Analytics",
+    "secondPreference": "Cyber Security",
+    "thirdPreference": "Python"
   },
   "36": {
-    "firstPreference": "17 - Data Science Skilled Team",
-    "secondPreference": "22 - Secondary Care Scheduled Release Team",
-    "thirdPreference": "15 - INSTANT (Solution Assurance)"
+    "firstPreference": "Data Science",
+    "secondPreference": "Data Analytics",
+    "thirdPreference": "SQL"
   },
   "37": {
-    "firstPreference": "5 - NHS App",
-    "secondPreference": "2 - 111 online (UEC Digital Services)",
-    "thirdPreference": "14 - Cloud Centre of Excellence (Infrastructure Services)"
+    "firstPreference": "App Development",
+    "secondPreference": "Web Development",
+    "thirdPreference": "SQL"
   },
   "38": {
-    "firstPreference": "18 - Adult Social Care Statistics",
-    "secondPreference": "11 - Development Office",
-    "thirdPreference": "23 - Analytical Insights (COVID Squad)"
+    "firstPreference": "App Development",
+    "secondPreference": "Web Development",
+    "thirdPreference": "Development"
   },
   "39": {
-    "firstPreference": "18 - Adult Social Care Statistics",
-    "secondPreference": "11 - Development Office",
-    "thirdPreference": "23 - Analytical Insights (COVID Squad)"
+    "firstPreference": "Data Science",
+    "secondPreference": "AWS",
+    "thirdPreference": "Azure"
   },
   "40": {
-    "firstPreference": "18 - Adult Social Care Statistics",
-    "secondPreference": "11 - Development Office",
-    "thirdPreference": "23 - Analytical Insights (COVID Squad)"
+    "firstPreference": "Data Analytics",
+    "secondPreference": "Big Data",
+    "thirdPreference": "Python"
   }
 }

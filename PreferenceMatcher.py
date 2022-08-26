@@ -90,7 +90,7 @@ class PreferenceMatcher:
                 ):
                     numbered_names.append(f"{placement_name}_{i}")
                 placement_names.extend(numbered_names)
-            else:
+            elif placement_data["number_of_grads"] == 1:
                 placement_names.append(placement_name)
         return placement_names
 
@@ -183,7 +183,10 @@ if __name__ == "__main__":
         weightings = [
             int(weighting) for weighting in [sys.argv[1], sys.argv[2], sys.argv[3]]
         ]
-    pref_matcher = PreferenceMatcher("preferences.json", "placements.json")
+    COHORT = "2022"
+    pref_matcher = PreferenceMatcher(
+        "preferences_2022_cohort.json", "placements_2022_cohort.json"
+    )
     preference_graph = pref_matcher.convert_preferences_to_graph()
     pref_matcher.apply_preference_weighting(preference_graph, weightings)
     matching = list(nx.max_weight_matching(preference_graph))
@@ -191,14 +194,41 @@ if __name__ == "__main__":
         if not match[0] in pref_matcher.people_names:
             matching[i] = (match[1], match[0])
     no_preference_matchings = []
-    with open(f"./output/preferenceOutput-{weightings}.txt", "w") as file:
+    with open(f"./output/cohort-d-{COHORT}-{weightings}.txt", "w") as file:
 
         for match in matching:
-            if re.sub(r"_\d", "", match[1]) not in [
-                pref_matcher.preferences_by_person[match[0]]["firstPreference"],
-                pref_matcher.preferences_by_person[match[0]]["secondPreference"],
-                pref_matcher.preferences_by_person[match[0]]["thirdPreference"],
-            ]:
+            person_name = match[0]
+            placement_name = match[1]
+            person_first_preference = pref_matcher.preferences_by_person[person_name][
+                "firstPreference"
+            ]
+            person_second_preference = pref_matcher.preferences_by_person[person_name][
+                "secondPreference"
+            ]
+            person_third_preference = pref_matcher.preferences_by_person[person_name][
+                "thirdPreference"
+            ]
+            placement_name_without_appended_number = re.sub(r"_\d", "", match[1])
+            is_placement_in_person_preferences = (
+                placement_name_without_appended_number
+                in [
+                    person_first_preference,
+                    person_second_preference,
+                    person_third_preference,
+                ]
+            )
+            placement_tags = pref_matcher.placements[
+                placement_name_without_appended_number
+            ]["tags"]
+            is_placement_in_person_tag_preferences = (
+                person_first_preference in placement_tags
+                or person_second_preference in placement_tags
+                or person_third_preference in placement_tags
+            )
+            if (
+                not is_placement_in_person_preferences
+                and not is_placement_in_person_tag_preferences
+            ):
                 no_preference_matchings.append(match)
             file.write(
                 f"""\n{match[0]} -> {match[1]}:
@@ -209,4 +239,4 @@ if __name__ == "__main__":
 
         file.write("\nNo Preference Matched:")
         for match in no_preference_matchings:
-            file.write(f"{match[0]} -> {match[1]}")
+            file.write(f"{match[0]} -> {match[1]}\n")
