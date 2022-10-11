@@ -194,9 +194,27 @@ if __name__ == "__main__":
         if not match[0] in pref_matcher.people_names:
             matching[i] = (match[1], match[0])
     no_preference_matchings = []
-    with open(f"./output/cohort-d-{COHORT}-{weightings}.txt", "w") as file:
+    placement_by_person = {person: placement for (person, placement) in matching}
 
-        for match in matching:
+    num_directorate_placements_by_directorate = {
+        "Product Development": 0,
+        "Data Services": 0,
+        "Cyber Operations": 0,
+        "IT Operations": 0,
+        "Platforms": 0,
+    }
+    for placement in placement_by_person.values():
+        placement_name_without_appended_number = re.sub(r"_\d", "", placement)
+        directorate = pref_matcher.placements[placement_name_without_appended_number][
+            "directorate"
+        ]
+        num_directorate_placements_by_directorate[directorate] += 1
+    print(num_directorate_placements_by_directorate)
+    with open(
+        f"./output/cohort-without-api-management-{COHORT}-{weightings}.txt", "w"
+    ) as file:
+
+        for match in sorted(matching):
             person_name = match[0]
             placement_name = match[1]
             person_first_preference = pref_matcher.preferences_by_person[person_name][
@@ -231,12 +249,13 @@ if __name__ == "__main__":
             ):
                 no_preference_matchings.append(match)
             file.write(
-                f"""\n{match[0]} -> {match[1]}:
+                f"""\n{match[0]} -> {match[1]} - Directorate: {pref_matcher.placements[placement_name_without_appended_number]["directorate"]}:
                     1st:{pref_matcher.preferences_by_person[match[0]]['firstPreference']}
                     2nd:{pref_matcher.preferences_by_person[match[0]]['secondPreference']}
                     3rd:{pref_matcher.preferences_by_person[match[0]]['thirdPreference']}"""
             )
 
         file.write("\nNo Preference Matched:")
+
         for match in no_preference_matchings:
             file.write(f"{match[0]} -> {match[1]}\n")

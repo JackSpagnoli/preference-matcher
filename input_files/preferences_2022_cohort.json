@@ -1,93 +1,93 @@
 {
   "1": {
-    "firstPreference": "AWS",
-    "secondPreference": "Azure",
-    "thirdPreference": "Cyber Security"
+    "firstPreference": "Web Development",
+    "secondPreference": "App Development",
+    "thirdPreference": "Development"
   },
   "2": {
-    "firstPreference": "Python",
-    "secondPreference": "Cyber Security",
+    "firstPreference": "23 - Data Science / Business Intelligence",
+    "secondPreference": "Data Visualisation",
     "thirdPreference": "Power BI"
   },
   "3": {
-    "firstPreference": "Development",
-    "secondPreference": "AWS",
-    "thirdPreference": "Cyber Security"
+    "firstPreference": "Python",
+    "secondPreference": "Development",
+    "thirdPreference": "Data Analytics"
   },
   "4": {
-    "firstPreference": "Cyber Security",
-    "secondPreference": "Development",
-    "thirdPreference": "Python"
+    "firstPreference": "38 - Cyber Security Operations Centre (CSOC)",
+    "secondPreference": "Cyber Security",
+    "thirdPreference": "Development"
   },
   "5": {
-    "firstPreference": "Web Development",
-    "secondPreference": "AWS",
-    "thirdPreference": "Azure"
+    "firstPreference": "16 - Developer / DoS Features",
+    "secondPreference": "Python",
+    "thirdPreference": "Development"
   },
   "6": {
     "firstPreference": "Development",
     "secondPreference": "App Development",
-    "thirdPreference": "Cyber Security"
+    "thirdPreference": "Web Development"
   },
   "7": {
-    "firstPreference": "Machine Learning",
+    "firstPreference": "Cyber Security",
+    "secondPreference": "Python",
+    "thirdPreference": "Machine Learning"
+  },
+  "8": {
+    "firstPreference": "Data Science",
+    "secondPreference": "Python",
+    "thirdPreference": "Pandas"
+  },
+  "9": {
+    "firstPreference": "Python",
+    "secondPreference": "Machine Learning",
+    "thirdPreference": "Development"
+  },
+  "10": {
+    "firstPreference": "38 - Cyber Security Operations Centre (CSOC)",
     "secondPreference": "Cyber Security",
     "thirdPreference": "Python"
   },
-  "8": {
-    "firstPreference": "Machine Learning",
-    "secondPreference": "Data Science",
-    "thirdPreference": "Development"
-  },
-  "9": {
-    "firstPreference": "Cyber Security",
-    "secondPreference": "Machine Learning",
-    "thirdPreference": "Python"
-  },
-  "10": {
-    "firstPreference": "Cyber Security",
-    "secondPreference": "Development",
-    "thirdPreference": "Python"
-  },
   "11": {
-    "firstPreference": "AWS",
-    "secondPreference": "Azure",
+    "firstPreference": "Development",
+    "secondPreference": "Python",
     "thirdPreference": "Cyber Security"
   },
   "12": {
-    "firstPreference": "Development",
+    "firstPreference": "36 - Infra Ops",
     "secondPreference": "Python",
-    "thirdPreference": "Java"
+    "thirdPreference": "Data Visualisation"
   },
   "13": {
-    "firstPreference": "Cyber Security",
+    "firstPreference": "Web Development",
     "secondPreference": "Python",
-    "thirdPreference": "C#"
+    "thirdPreference": "Cyber Security"
   },
   "14": {
-    "firstPreference": "AWS",
-    "secondPreference": "Azure",
-    "thirdPreference": "App Development"
+    "firstPreference": "Web Development",
+    "secondPreference": "App Development",
+    "thirdPreference": "AWS"
   },
   "15": {
-    "firstPreference": "Development",
+    "firstPreference": "Reproducible Analytical Pipelines (RAP)",
     "secondPreference": "Data Visualisation",
-    "thirdPreference": "App Development"
+    "thirdPreference": "Data Analytics"
   },
   "16": {
-    "firstPreference": "Cyber Security",
-    "secondPreference": "Machine Learning",
+    "firstPreference": "Data Science",
+    "secondPreference": "Data Visualisation",
     "thirdPreference": "Data Analytics"
   },
   "17": {
     "firstPreference": "Machine Learning",
-    "secondPreference": "AWS",
-    "thirdPreference": "Azure"
+    "secondPreference": "Python",
+    "thirdPreference": "Development"
   },
   "18": {
     "firstPreference": "Cyber Security",
     "secondPreference": "AWS",
-    "thirdPreference": "Azure"
+    "thirdPreference": "Data Analytics"
   },
   "19": {
     "firstPreference": "Development",
@@ -100,29 +100,29 @@
     "thirdPreference": "AWS"
   },
   "21": {
-    "firstPreference": "Cyber Security",
+    "firstPreference": "38 - Cyber Security Operations Centre (CSOC)",
     "secondPreference": "Development",
     "thirdPreference": "Web Development"
   },
   "22": {
-    "firstPreference": "Cyber Security",
-    "secondPreference": "AWS",
-    "thirdPreference": "Azure"
+    "firstPreference": "Python",
+    "secondPreference": "Web Development",
+    "thirdPreference": "SQL"
   },
   "23": {
     "firstPreference": "Data Analytics",
     "secondPreference": "Data Visualisation",
-    "thirdPreference": "Python"
+    "thirdPreference": "Data Science"
   },
   "24": {
-    "firstPreference": "Development",
+    "firstPreference": "Web Development",
     "secondPreference": "App Development",
-    "thirdPreference": "Web Development"
+    "thirdPreference": "Development"
   },
   "25": {
-    "firstPreference": "AWS",
-    "secondPreference": "Azure",
-    "thirdPreference": "APIs"
+    "firstPreference": "13 - ITOC Onboarding / Development ",
+    "secondPreference": "Python",
+    "thirdPreference": "Data Analytics"
   },
   "26": {
     "firstPreference": "Cyber Security",
@@ -131,13 +131,13 @@
   },
   "27": {
     "firstPreference": "Development",
-    "secondPreference": "Cyber Security",
-    "thirdPreference": "AWS"
+    "secondPreference": "Web Development",
+    "thirdPreference": "Machine Learning"
   },
   "28": {
     "firstPreference": "Data Science",
-    "secondPreference": "Machine Learning",
-    "thirdPreference": "Development"
+    "secondPreference": "Python",
+    "thirdPreference": "Data Analytics"
   },
   "29": {
     "firstPreference": "Data Analytics",
@@ -147,12 +147,12 @@
   "30": {
     "firstPreference": "Data Analytics",
     "secondPreference": "Data Science",
-    "thirdPreference": "Cyber Security"
+    "thirdPreference": "Python"
   },
   "31": {
-    "firstPreference": "Cyber Security",
-    "secondPreference": "Development",
-    "thirdPreference": "Web Development"
+    "firstPreference": "Python",
+    "secondPreference": "Data Visualisation",
+    "thirdPreference": "Data Analytics"
   },
   "32": {
     "firstPreference": "Development",
@@ -160,8 +160,8 @@
     "thirdPreference": "Data Analytics"
   },
   "33": {
-    "firstPreference": "Cyber Security",
-    "secondPreference": "C#",
+    "firstPreference": "Python",
+    "secondPreference": "Cyber Security",
     "thirdPreference": "Development"
   },
   "34": {
@@ -170,8 +170,8 @@
     "thirdPreference": "Data Visualisation"
   },
   "35": {
-    "firstPreference": "Data Analytics",
-    "secondPreference": "Cyber Security",
+    "firstPreference": "Cyber Security",
+    "secondPreference": "Data Analytics",
     "thirdPreference": "Python"
   },
   "36": {
@@ -185,14 +185,14 @@
     "thirdPreference": "SQL"
   },
   "38": {
-    "firstPreference": "App Development",
-    "secondPreference": "Web Development",
+    "firstPreference": "Data Analytics",
+    "secondPreference": "Python",
     "thirdPreference": "Development"
   },
   "39": {
     "firstPreference": "Data Science",
-    "secondPreference": "AWS",
-    "thirdPreference": "Azure"
+    "secondPreference": "Azure",
+    "thirdPreference": "Development"
   },
   "40": {
     "firstPreference": "Data Analytics",

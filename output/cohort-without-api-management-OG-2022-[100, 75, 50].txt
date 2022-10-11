@@ -1,0 +1,162 @@
+
+22 -> 12 - Lovelace (in Archimedes tribe) - Directorate: Data Services:
+                    1st:Python
+                    2nd:Web Development
+                    3rd:SQL
+4 -> 38 - Cyber Security Operations Centre (CSOC)_4 - Directorate: Cyber Operations:
+                    1st:38 - Cyber Security Operations Centre (CSOC)
+                    2nd:Cyber Security
+                    3rd:Development
+18 -> 37 - Specialist Security Services - Directorate: Cyber Operations:
+                    1st:Cyber Security
+                    2nd:AWS
+                    3rd:Data Analytics
+16 -> 20 - Data Science Skilled Team - MPS_2 - Directorate: Data Services: # Check with Rupert if Mia can come back
+                    1st:Data Science
+                    2nd:Data Visualisation
+                    3rd:Data Analytics
+20 -> 17 - Test / DoS Features / Live Service - Directorate: Product Development: # Move to Cyber?
+                    1st:Cyber Security
+                    2nd:Development
+                    3rd:AWS
+31 -> 9 - Lovelace Squad - Directorate: Data Services:
+                    1st:Python
+                    2nd:Data Visualisation
+                    3rd:Data Analytics
+21 -> 38 - Cyber Security Operations Centre (CSOC)_1 - Directorate: Cyber Operations:
+                    1st:38 - Cyber Security Operations Centre (CSOC)
+                    2nd:Development
+                    3rd:Web Development
+9 -> 13 - ITOC Onboarding / Development _2 - Directorate: IT Operations:
+                    1st:Python
+                    2nd:Machine Learning
+                    3rd:Development
+40 -> 0 - Babbage Squad - Archimedes Tribe - Directorate: Data Services:
+                    1st:Data Analytics
+                    2nd:Big Data
+                    3rd:Python
+36 -> 8 - Analytical Services: Population Health, Clinical Audit and Specialist Care (Seacole squad) - Directorate: Data Services:
+                    1st:Data Science
+                    2nd:Data Analytics
+                    3rd:SQL
+38 -> 2 - Management Information Team - Directorate: Product Development:
+                    1st:Data Analytics
+                    2nd:Python
+                    3rd:Development
+33 -> 6 - SDE Platform Team_2 - Directorate: Data Services: # Check if this will be a good placement
+                    1st:Python
+                    2nd:Cyber Security
+                    3rd:Development
+15 -> 21 - Data Science / Artificial Data - Directorate: Data Services:
+                    1st:Reproducible Analytical Pipelines (RAP)
+                    2nd:Data Visualisation
+                    3rd:Data Analytics
+26 -> 14 - DoS & DoS Integration team_3 - Directorate: Product Development: # Check if this can be done remote?
+                    1st:Cyber Security
+                    2nd:Development
+                    3rd:AWS
+10 -> 38 - Cyber Security Operations Centre (CSOC)_2 - Directorate: Cyber Operations:
+                    1st:38 - Cyber Security Operations Centre (CSOC)
+                    2nd:Cyber Security
+                    3rd:Python
+5 -> 16 - Developer / DoS Features - Directorate: Product Development:
+                    1st:16 - Developer / DoS Features
+                    2nd:Python
+                    3rd:Development
+6 -> 24 - Data Science / covid patient pathways_2 - Directorate: Data Services:
+                    1st:Development
+                    2nd:App Development
+                    3rd:Web Development
+2 -> 23 - Data Science / Business Intelligence - Directorate: Data Services: # Check with Rupert if Joe will be able to come back
+                    1st:23 - Data Science / Business Intelligence
+                    2nd:Data Visualisation
+                    3rd:Power BI
+19 -> 18 - 111 online - Directorate: Product Development:
+                    1st:Development
+                    2nd:Data Analytics
+                    3rd:Web Development
+8 -> 22 - Data Science / RAP_1 - Directorate: Data Services:
+                    1st:Data Science
+                    2nd:Python
+                    3rd:Pandas
+30 -> 10 - Data Visualisation & Insights - Analytical Insights Service_1 - Directorate: Data Services:
+                    1st:Data Analytics
+                    2nd:Data Science
+                    3rd:Python
+23 -> 11 - Cohorting & Data Linkage - Analytical Insights Service_2 - Directorate: Data Services:
+                    1st:Data Analytics
+                    2nd:Data Visualisation
+                    3rd:Data Science
+24 -> 35 - Primary Care Registration Management_1 - Directorate: Platforms:
+                    1st:Web Development
+                    2nd:App Development
+                    3rd:Development
+28 -> 11 - Cohorting & Data Linkage - Analytical Insights Service_1 - Directorate: Data Services:
+                    1st:Data Science
+                    2nd:Python
+                    3rd:Data Analytics
+35 -> 6 - SDE Platform Team_1 - Directorate: Data Services: # Check if this will be a good placement
+                    1st:Cyber Security
+                    2nd:Data Analytics
+                    3rd:Python
+14 -> 19 - 111 online - Directorate: Product Development:
+                    1st:Web Development
+                    2nd:App Development
+                    3rd:AWS
+11 -> 24 - Data Science / covid patient pathways_1 - Directorate: Data Services:
+                    1st:Development
+                    2nd:Python
+                    3rd:Cyber Security
+27 -> 14 - DoS & DoS Integration team_2 - Directorate: Product Development:
+                    1st:Development
+                    2nd:Web Development
+                    3rd:Machine Learning
+25 -> 13 - ITOC Onboarding / Development _1 - Directorate: IT Operations:
+                    1st:13 - ITOC Onboarding / Development 
+                    2nd:Python
+                    3rd:Data Analytics
+12 -> 36 - Infra Ops - Directorate: IT Operations:
+                    1st:36 - Infra Ops
+                    2nd:Python
+                    3rd:Data Visualisation
+29 -> 10 - Data Visualisation & Insights - Analytical Insights Service_2 - Directorate: Data Services:
+                    1st:Data Analytics
+                    2nd:Data Visualisation
+                    3rd:Python
+7 -> 38 - Cyber Security Operations Centre (CSOC)_3 - Directorate: Cyber Operations:
+                    1st:Cyber Security
+                    2nd:Python
+                    3rd:Machine Learning
+37 -> 5 - Bowel Cancer Screening - Directorate: Product Development:
+                    1st:App Development
+                    2nd:Web Development
+                    3rd:SQL
+3 -> 22 - Data Science / RAP_2 - Directorate: Data Services:
+                    1st:Python
+                    2nd:Development
+                    3rd:Data Analytics
+13 -> 35 - Primary Care Registration Management_2 - Directorate: Platforms:
+                    1st:Web Development
+                    2nd:Python
+                    3rd:Cyber Security
+17 -> 20 - Data Science Skilled Team - MPS_1 - Directorate: Data Services: # Check with Rupert if Mia can come back
+                    1st:Machine Learning
+                    2nd:Python
+                    3rd:Development
+39 -> 1 - Turing squad - Directorate: Data Services:
+                    1st:Data Science
+                    2nd:Azure
+                    3rd:Development
+1 -> 35 - Primary Care Registration Management_3 - Directorate: Platforms:
+                    1st:Web Development
+                    2nd:App Development
+                    3rd:Development
+34 -> 3 - Nightingale squad - Directorate: Data Services:
+                    1st:Data Analytics
+                    2nd:Data Engineering
+                    3rd:Data Visualisation
+32 -> 14 - DoS & DoS Integration team_1 - Directorate: Product Development:
+                    1st:Development
+                    2nd:Reproducible Analytical Pipelines (RAP)
+                    3rd:Data Analytics
+No Preference Matched:

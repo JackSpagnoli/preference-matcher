@@ -554,31 +554,6 @@
       "Version Control"
     ]
   },
-  "33 - API Management ": {
-    "directorate": "Platforms",
-    "number_of_grads": 3,
-    "tags": [
-      "APIs",
-      "Azure",
-      "CI/CD",
-      "C#",
-      "Development",
-      "DevOps",
-      "GitHub / GitLab",
-      "Java",
-      "Linux",
-      "Python",
-      "Splunk",
-      "Test Driven Development (TDD)",
-      "Version Control",
-      "Web Development"
-    ]
-  },
-  "34 - API Management": {
-    "directorate": "Platforms",
-    "number_of_grads": 1,
-    "tags": ["Excel"]
-  },
   "35 - Primary Care Registration Management": {
     "directorate": "Platforms",
     "number_of_grads": 5,
@@ -610,5 +585,28 @@
     "directorate": "Cyber Operations",
     "number_of_grads": 5,
     "tags": ["AWS", "Azure", "Cyber Security", "Splunk"]
+  },
+  "39 - Collaboration Services Team - Centre of excellence": {
+    "directorate": "IT Operations",
+    "number_of_grads": 3,
+    "tags": [
+      "App Development",
+      "Development",
+      "Excel",
+      "Power BI",
+      "Version Control"
+    ]
+  },
+  "40 - Data Security Center (DSC) Innovation and Delivery (I&D) Team": {
+    "directorate": "Cyber Operations",
+    "number_of_grads": 3,
+    "tags": [
+      "Big Data",
+      "Cyber Security",
+      "Data Analytics",
+      "Data Visualisation",
+      "Excel",
+      "Power BI"
+    ]
   }
 }
