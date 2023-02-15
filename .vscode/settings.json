@@ -4,7 +4,6 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.python"
   },
-  "python.linting.enabled": true,
   "python.testing.pytestEnabled": true,
   "files.exclude": {
     "**/*.pyc": {
@@ -14,5 +13,5 @@
     "**/.DS_Store": true,
     "**/__pycache__": true
   },
-  "python.linting.flake8Enabled": true
+  "python.linting.enabled": false
 }

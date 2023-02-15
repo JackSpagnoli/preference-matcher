@@ -197,7 +197,7 @@ class PreferenceMatcherTest(unittest.TestCase):
             "111 Online - Developer",
             "Cyber Security",
         ]
-        actualPlacements = self.preferenceMatcher.extract_placement_names(
+        actualPlacements = self.preferenceMatcher.get_placement_names(
             self.simplifiedPreferencesObj["placements"]
         )
         self.assertEqual(placements, actualPlacements)
