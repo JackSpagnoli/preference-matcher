@@ -9,16 +9,24 @@ class DataAssurance:
     def __init__(self) -> None:
          data = {}
 
+    def check_reason_repeat(self, key):
+        #find out actual wording
+        if key == "Unwanted placement" and :
+           return 
+        else:
+            return "Graduate has added same placement multiple times."
+
     def check_preference_repeat(self, preferenceData):
         flippedData = {}
         for graduate in preferenceData:
             for key, value in preferenceData.items():
                 if value in flippedData:
-                    self.data = graduate[""]
+                    self.data[graduate] = {"Note": "Graduate has added same placement multiple times."}
                 else:
-                    flippedData[value].append(key)
-
-    def write_yaml_file(filename, self.data):
-         with open(filename, 'a') as f:
+                    flippedData[value] = key
+                
+    
+    def write_yaml_file(self):
+         with open("DataAssuranceReport", 'a') as f:
             yaml.dump_all(self.data, f, default_flow_style=False)
                 
