@@ -1,0 +1,609 @@
+["0 - Babbage Squad - Archimedes Tribe"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [
+  "Data Access Environment (DAE)",
+  "Data Analytics",
+  "Databricks",
+  "Data Visualisation",
+  "Development",
+  "Excel",
+  "Power BI",
+  "PySpark",
+  "Python",
+  "Reproducible Analytical Pipelines (RAP)",
+  "SQL"
+]
+
+["1 - Turing squad"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [
+  "AWS",
+  "Data Access Environment (DAE)",
+  "Data Analytics",
+  "Databricks",
+  "Data Linkage",
+  "Data Science",
+  "Data Visualisation",
+  "Excel",
+  "GitHub / GitLab",
+  "Power BI",
+  "PySpark",
+  "Python",
+  "R",
+  "Reproducible Analytical Pipelines (RAP)",
+  "SQL"
+]
+
+["2 - Management Information Team"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [
+  "Data Analytics",
+  "Data Linkage",
+  "Data Visualisation",
+  "Development",
+  "Excel",
+  "Power BI",
+  "SQL"
+]
+
+["3 - Nightingale squad"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [
+  "Data Access Environment (DAE)",
+  "Data Analytics",
+  "Databricks",
+  "Data Linkage",
+  "Data Visualisation",
+  "Excel",
+  "GitHub / GitLab",
+  "Power BI",
+  "Python",
+  "Reproducible Analytical Pipelines (RAP)",
+  "SQL",
+  "Version Control"
+]
+
+["4 - Digital Transformation of Screening"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [ "Excel" ]
+
+["5 - Bowel Cancer Screening"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [
+  "App Development",
+  "AWS",
+  "CI/CD",
+  "Development",
+  "DevOps",
+  "GitHub / GitLab",
+  "Java",
+  "JavaScript",
+  "Jenkins",
+  "Kubernetes",
+  "Selenium",
+  "SQL",
+  "Test Driven Development (TDD)",
+  "Version Control",
+  "Web Development"
+]
+
+["6 - SDE Platform Team"]
+directorate = "Data Services"
+number_of_grads = 2
+tags = [
+  "AWS",
+  "CI/CD",
+  "Cyber Security",
+  "Data Access Environment (DAE)",
+  "Databricks",
+  "Development",
+  "DevOps",
+  "GitHub / GitLab",
+  "Helpdesk",
+  "Kubernetes",
+  "NoSQL Databases",
+  "Python",
+  "Splunk",
+  "Terraform",
+  "Version Control"
+]
+
+["7 - Screening Programme (Digital Transformation of Screening and Live Screening Services)"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [ ]
+
+["8 - Analytical Services: Population Health, Clinical Audit and Specialist Care (Seacole squad)"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [
+  "Big Data",
+  "Data Access Environment (DAE)",
+  "Data Analytics",
+  "Databricks",
+  "Data Engineering",
+  "Data Linkage",
+  "Data Science",
+  "Data Visualisation",
+  "Development",
+  "Excel",
+  "GitHub / GitLab",
+  "NoSQL Databases",
+  "Pandas",
+  "Power BI",
+  "Python",
+  "R",
+  "Reproducible Analytical Pipelines (RAP)",
+  "SQL",
+  "Test Driven Development (TDD)",
+  "Tidyverse",
+  "Version Control"
+]
+
+["9 - Lovelace Squad"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [
+  "Data Analytics",
+  "Data Engineering",
+  "Data Linkage",
+  "Data Science",
+  "Data Visualisation",
+  "Excel",
+  "GitHub / GitLab",
+  "NoSQL Databases",
+  "Pandas",
+  "Power BI",
+  "PySpark",
+  "Python",
+  "R",
+  "Reproducible Analytical Pipelines (RAP)",
+  "SQL",
+  "Test Driven Development (TDD)",
+  "Tidyverse",
+  "Version Control"
+]
+
+["10 - Data Visualisation & Insights - Analytical Insights Service"]
+directorate = "Data Services"
+number_of_grads = 2
+tags = [
+  "Big Data",
+  "Data Access Environment (DAE)",
+  "Data Analytics",
+  "Data Linkage",
+  "Data Science",
+  "Excel",
+  "Power BI",
+  "Python",
+  "SQL",
+  "Tableau"
+]
+
+["11 - Cohorting & Data Linkage - Analytical Insights Service"]
+directorate = "Data Services"
+number_of_grads = 2
+tags = [
+  "Big Data",
+  "Data Access Environment (DAE)",
+  "Data Analytics",
+  "Data Linkage",
+  "Data Science",
+  "Excel",
+  "Power BI",
+  "Python",
+  "SQL",
+  "Tableau"
+]
+
+["12 - Lovelace (in Archimedes tribe)"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [
+  "Data Access Environment (DAE)",
+  "Data Analytics",
+  "Databricks",
+  "Data Visualisation",
+  "Excel",
+  "Power BI",
+  "PySpark",
+  "Python",
+  "SQL",
+  "Version Control"
+]
+
+["13 - ITOC Onboarding / Development "]
+directorate = "IT Operations"
+number_of_grads = 2
+tags = [
+  "APIs",
+  "App Development",
+  "Data Visualisation",
+  "GitHub / GitLab",
+  "Linux",
+  "Python",
+  "Splunk",
+  "Terraform",
+  "Version Control"
+]
+
+["14 - DoS & DoS Integration team"]
+directorate = "Product Development"
+number_of_grads = 3
+tags = [
+  "APIs",
+  "App Development",
+  "AWS",
+  "CI/CD",
+  "Cyber Security",
+  "Data Analytics",
+  "Development",
+  "DevOps",
+  "Excel",
+  "GitHub / GitLab",
+  "Helpdesk",
+  "Java",
+  "JavaScript",
+  "Jenkins",
+  "Kubernetes",
+  "Python",
+  "Selenium",
+  "Splunk",
+  "SQL",
+  "Terraform",
+  "Test Driven Development (TDD)",
+  "Version Control",
+  "Web Development"
+]
+
+["15 - DoS Integration"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [ "Data Analytics", "Excel" ]
+
+["16 - Developer / DoS Features"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [
+  "APIs",
+  "App Development",
+  "AWS",
+  "CI/CD",
+  "Cyber Security",
+  "Data Engineering",
+  "DevOps",
+  "Excel",
+  "GitHub / GitLab",
+  "Java",
+  "JavaScript",
+  "Jenkins",
+  "Kubernetes",
+  "Linux",
+  "Python",
+  "Selenium",
+  "Splunk",
+  "SQL",
+  "Terraform",
+  "Test Driven Development (TDD)",
+  "Version Control",
+  "Web Development"
+]
+
+["17 - Test / DoS Features / Live Service"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [
+  "APIs",
+  "App Development",
+  "AWS",
+  "CI/CD",
+  "Cyber Security",
+  "Data Engineering",
+  "Development",
+  "DevOps",
+  "Excel",
+  "GitHub / GitLab",
+  "Java",
+  "JavaScript",
+  "Jenkins",
+  "Kubernetes",
+  "Python",
+  "Selenium",
+  "Splunk",
+  "SQL",
+  "Terraform",
+  "Test Driven Development (TDD)",
+  "Version Control",
+  "Web Development"
+]
+
+["18 - 111 online"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [
+  "APIs",
+  "Azure",
+  "Development",
+  "DevOps",
+  "GitHub / GitLab",
+  "Terraform",
+  "Web Development"
+]
+
+["19 - 111 online"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [
+  "APIs",
+  "Azure",
+  "Development",
+  "DevOps",
+  "GitHub / GitLab",
+  "Terraform",
+  "Web Development"
+]
+
+["20 - Data Science Skilled Team - MPS"]
+directorate = "Data Services"
+number_of_grads = 2
+tags = [
+  "Big Data",
+  "CI/CD",
+  "Data Access Environment (DAE)",
+  "Data Analytics",
+  "Databricks",
+  "Data Engineering",
+  "Data Linkage",
+  "Data Science",
+  "Data Visualisation",
+  "Development",
+  "GitHub / GitLab",
+  "Machine Learning",
+  "Pandas",
+  "PySpark",
+  "Python",
+  "Reproducible Analytical Pipelines (RAP)",
+  "SQL",
+  "Version Control"
+]
+
+["21 - Data Science / Artificial Data"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [
+  "Big Data",
+  "CI/CD",
+  "Data Access Environment (DAE)",
+  "Data Analytics",
+  "Databricks",
+  "Data Engineering",
+  "Data Science",
+  "Development",
+  "GitHub / GitLab",
+  "Machine Learning",
+  "Pandas",
+  "PySpark",
+  "Python",
+  "Reproducible Analytical Pipelines (RAP)",
+  "SQL",
+  "Test Driven Development (TDD)",
+  "Version Control"
+]
+
+["22 - Data Science / RAP"]
+directorate = "Data Services"
+number_of_grads = 2
+tags = [
+  "Big Data",
+  "CI/CD",
+  "Data Access Environment (DAE)",
+  "Data Analytics",
+  "Databricks",
+  "Data Engineering",
+  "Data Linkage",
+  "Data Science",
+  "GitHub / GitLab",
+  "Pandas",
+  "PySpark",
+  "Python",
+  "Reproducible Analytical Pipelines (RAP)",
+  "SQL",
+  "Test Driven Development (TDD)",
+  "Tidyverse",
+  "Version Control"
+]
+
+["23 - Data Science / Business Intelligence"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [
+  "APIs",
+  "AWS",
+  "CI/CD",
+  "Data Analytics",
+  "Data Engineering",
+  "Data Science",
+  "Data Visualisation",
+  "Development",
+  "GitHub / GitLab",
+  "Power BI",
+  "Python",
+  "SQL",
+  "Tableau",
+  "Version Control",
+  "Web Development"
+]
+
+["24 - Data Science / covid patient pathways"]
+directorate = "Data Services"
+number_of_grads = 2
+tags = [
+  "Big Data",
+  "Data Access Environment (DAE)",
+  "Data Analytics",
+  "Databricks",
+  "Data Engineering",
+  "Data Linkage",
+  "Data Science",
+  "Data Visualisation",
+  "Development",
+  "GitHub / GitLab",
+  "Machine Learning",
+  "Pandas",
+  "PySpark",
+  "Python",
+  "Reproducible Analytical Pipelines (RAP)",
+  "SQL",
+  "Version Control"
+]
+
+["25 - Data Science / TRE Data Wranglers"]
+directorate = "Data Services"
+number_of_grads = 2
+tags = [
+  "Big Data",
+  "Data Access Environment (DAE)",
+  "Data Analytics",
+  "Databricks",
+  "Data Engineering",
+  "Data Linkage",
+  "Data Science",
+  "Data Visualisation",
+  "GitHub / GitLab",
+  "Pandas",
+  "PySpark",
+  "Python",
+  "R",
+  "Reproducible Analytical Pipelines (RAP)",
+  "SQL",
+  "Version Control"
+]
+
+["26 - Vaccinations Programme, Tech & Data Delivery Team"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [ ]
+
+["27 - Vaccinations - National Booking Service"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [ ]
+
+["28 - Analytical Insights"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [
+  "Data Analytics",
+  "Databricks",
+  "Data Science",
+  "Data Visualisation",
+  "Excel",
+  "Power BI",
+  "SQL",
+  "Tableau"
+]
+
+["29 - Data Engineering"]
+directorate = "Data Services"
+number_of_grads = 5
+tags = [
+  "Data Access Environment (DAE)",
+  "Databricks",
+  "Data Engineering",
+  "Data Linkage",
+  "Development",
+  "GitHub / GitLab",
+  "Helpdesk",
+  "PySpark",
+  "Python",
+  "SQL",
+  "Version Control"
+]
+
+["30 - UEC Data, Digital Urgent & Emergency Care"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [ ]
+
+["31 - Child Protection Information Sharing (CP-IS)"]
+directorate = "Product Development"
+number_of_grads = 3
+tags = [ "Development", "DevOps", "Excel" ]
+
+["32 - Electronic Prescription Service (Team Epsilon)"]
+directorate = "Platforms"
+number_of_grads = 1
+tags = [
+  "APIs",
+  "AWS",
+  "CI/CD",
+  "Development",
+  "DevOps",
+  "GitHub / GitLab",
+  "JavaScript",
+  "Splunk",
+  "Test Driven Development (TDD)",
+  "TypeScript",
+  "Version Control"
+]
+
+["35 - Primary Care Registration Management"]
+directorate = "Platforms"
+number_of_grads = 5
+tags = [
+  "App Development",
+  "CI/CD",
+  "Development",
+  "DevOps",
+  "GitHub / GitLab",
+  "Linux",
+  "NoSQL Databases",
+  "Python",
+  "Test Driven Development (TDD)",
+  "Version Control",
+  "Web Development"
+]
+
+["36 - Infra Ops"]
+directorate = "IT Operations"
+number_of_grads = 1
+tags = [ ]
+
+["37 - Specialist Security Services"]
+directorate = "Cyber Operations"
+number_of_grads = 1
+tags = [ "Cyber Security" ]
+
+["38 - Cyber Security Operations Centre (CSOC)"]
+directorate = "Cyber Operations"
+number_of_grads = 5
+tags = [ "AWS", "Azure", "Cyber Security", "Splunk" ]
+
+["39 - Collaboration Services Team - Centre of excellence"]
+directorate = "IT Operations"
+number_of_grads = 3
+tags = [
+  "App Development",
+  "Development",
+  "Excel",
+  "Power BI",
+  "Version Control"
+]
+
+["40 - Data Security Center (DSC) Innovation and Delivery (I&D) Team"]
+directorate = "Cyber Operations"
+number_of_grads = 3
+tags = [
+  "Big Data",
+  "Cyber Security",
+  "Data Analytics",
+  "Data Visualisation",
+  "Excel",
+  "Power BI"
+]

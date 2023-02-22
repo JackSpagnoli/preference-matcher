@@ -7,9 +7,10 @@ import itertools
 import tomllib
 import tomlkit
 import argparse
-import math
 
 PATH_TO_INPUT_FILES = "./input_files/"
+BASE_WEIGHT = 50
+ANTI_PREFERENCE_MODIFIER = -99999
 
 
 def convert_json_to_dict_from_file(filename: str) -> dict[str, Any]:
@@ -68,7 +69,8 @@ class PreferenceMatcher:
         preferences_graph.add_nodes_from(self.placement_names)
         preferences_graph.add_nodes_from(self.people)
         preferences_graph.add_edges_from(
-            list(itertools.product(self.people, self.placement_names)), weight=50
+            list(itertools.product(self.people, self.placement_names)),
+            weight=BASE_WEIGHT,
         )
         return preferences_graph
 
@@ -102,6 +104,16 @@ class PreferenceMatcher:
                 placements_to_weight.append(placement_to_check)
         return placements_to_weight
 
+    def get_anti_preferences_with_numbered_names(self, anti_preferences):
+        nested_anti_preferences = [
+            self.get_placements_from_preference(anti_pref)
+            for anti_pref in anti_preferences
+        ]
+
+        flattened_anti_preferences = sum(nested_anti_preferences, [])
+
+        return flattened_anti_preferences
+
     def apply_preference_weighting(self, graph, weightings):
         for person, preferences in self.preferences_by_person.items():
             first_placements_to_weight = self.get_placements_from_preference(
@@ -112,6 +124,9 @@ class PreferenceMatcher:
             )
             third_placements_to_weight = self.get_placements_from_preference(
                 preferences["thirdPreference"]
+            )
+            anti_preferences = self.get_anti_preferences_with_numbered_names(
+                preferences["antiPreference"]
             )
 
             second_placements_with_duplicates_removed = [
@@ -141,6 +156,9 @@ class PreferenceMatcher:
                 person,
                 third_placements_with_duplicates_removed,
                 weightings[2],
+            )
+            self.weight_placement(
+                graph, person, anti_preferences, ANTI_PREFERENCE_MODIFIER
             )
 
 
@@ -184,6 +202,7 @@ def parse_matchings_for_output(sorted_matchings, pref_matcher: PreferenceMatcher
         first_preference = person_preferences["firstPreference"]
         second_preference = person_preferences["secondPreference"]
         third_preference = person_preferences["thirdPreference"]
+        anti_preferences = person_preferences["antiPreference"]
 
         placement = match[1]
         placement_without_appended_number = re.sub(r"_\d", "", placement)
@@ -214,6 +233,7 @@ def parse_matchings_for_output(sorted_matchings, pref_matcher: PreferenceMatcher
             "1st preference": first_preference,
             "2nd preference": second_preference,
             "3rd preference": third_preference,
+            "anti preferences": anti_preferences,
         }
 
     return preference_matchings, no_preference_matchings
@@ -224,7 +244,7 @@ def write_to_file(
     no_preference_matchings,
     num_directorate_placements_by_directorate,
 ):
-    with open(f"./output/{OUTPUT_FILE_NAME}", "w", encoding="UTF-8") as file:
+    with open(f"./output/test-{OUTPUT_FILE_NAME}", "w", encoding="UTF-8") as file:
         file.write(f"{tomlkit.dumps(num_directorate_placements_by_directorate)}\n")
         file.write(f"{tomlkit.dumps(preference_matchings)}\n")
 
