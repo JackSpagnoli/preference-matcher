@@ -6,6 +6,7 @@ import sys
 
 
 class PreferenceExtractor:
+
     def readPreferenceData(self, preferenceFile):
         with open(preferenceFile) as file:
             reader = csv.DictReader(file)
@@ -27,6 +28,7 @@ class PreferenceExtractor:
                     "Finally, please select your third choice placement"
                 ],
             }
+        
         return cleanData
 
 
