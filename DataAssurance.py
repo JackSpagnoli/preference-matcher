@@ -11,8 +11,8 @@ class DataAssurance:
 
     def check_reason_repeat(self, key):
         #find out actual wording
-        if key == "Unwanted placement" and :
-           return 
+        if key == "Unwanted placement":
+           return ""
         else:
             return "Graduate has added same placement multiple times."
 
@@ -21,7 +21,7 @@ class DataAssurance:
         for graduate in preferenceData:
             for key, value in preferenceData.items():
                 if value in flippedData:
-                    self.data[graduate] = {"Note": "Graduate has added same placement multiple times."}
+                    self.data[graduate] = {"Note": self.check_reason_repeat(key)}
                 else:
                     flippedData[value] = key
                 
