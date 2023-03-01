@@ -7,21 +7,22 @@ import yaml
 
 class DataAssurance:    
     def __init__(self) -> None:
-         data = {}
-
-    def check_reason_repeat(self, key):
-        #find out actual wording
-        if key == "Unwanted placement":
-           return ""
-        else:
-            return "Graduate has added same placement multiple times."
+         self.data = {}
 
     def check_preference_repeat(self, preferenceData):
-        flippedData = {}
         for graduate in preferenceData:
+            flippedData = {}
             for key, value in preferenceData.items():
+                if type(value) is list:
+                    for antiPreference in value:
+                        if antiPreference in flippedData:
+                            self.data[graduate] = "There has been repeated preference/antipreference"
+                            flippedData[value] = key
+                        else:
+                            flippedData[value] = key
                 if value in flippedData:
-                    self.data[graduate] = {"Note": self.check_reason_repeat(key)}
+                    self.data[graduate] = "There has been repeated preference/antipreference"
+                    flippedData[value] = key
                 else:
                     flippedData[value] = key
                 
@@ -29,4 +30,6 @@ class DataAssurance:
     def write_yaml_file(self):
          with open("DataAssuranceReport", 'a') as f:
             yaml.dump_all(self.data, f, default_flow_style=False)
+
+   
                 
