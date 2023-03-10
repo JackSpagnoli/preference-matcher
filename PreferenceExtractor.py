@@ -6,6 +6,7 @@ import sys
 
 
 class PreferenceExtractor:
+
     def readPreferenceData(self, preferenceFile):
         with open(preferenceFile) as file:
             reader = csv.DictReader(file)
@@ -16,17 +17,25 @@ class PreferenceExtractor:
     def cleanPreferenceData(self, rawPreferenceData):
         cleanData = {}
         for preferenceDatum in rawPreferenceData:
-            cleanData[preferenceDatum["What is your name?"]] = {
-                "firstPreference": preferenceDatum[
-                    "Please select which of the following would be your first choice placement:"
-                ],
-                "secondPreference": preferenceDatum[
-                    "Please select your second choice placement:"
-                ],
-                "thirdPreference": preferenceDatum[
-                    "Finally, please select your third choice placement"
-                ],
+            person = preferenceDatum["What is your name?"]
+            firstPreference = preferenceDatum[
+                "Please select which of the following would be your first choice placement:"
+            ]
+
+            secondPreference = preferenceDatum[
+                "Please select your second choice placement:"
+            ]
+
+            thirdPreference = preferenceDatum[
+                "Finally, please select your third choice placement"
+            ]
+
+            cleanData[person] = {
+                "firstPreference": firstPreference,
+                "secondPreference": secondPreference,
+                "thirdPreference": thirdPreference,
             }
+        
         return cleanData
 
 

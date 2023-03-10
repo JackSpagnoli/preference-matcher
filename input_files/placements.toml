@@ -1,0 +1,229 @@
+["1 - NHS.UK"]
+directorate = "Product Development"
+number_of_grads = 2
+tags = [ "development", "C#", "CI/CD", "DevOps", "GitHub" ]
+
+["2 - 111 online (UEC Digital Services)"]
+directorate = "Product Development"
+number_of_grads = 2
+tags = [ "development", "C#", "CI/CD", "DevOps", "GitHub" ]
+
+["3 - Pathways"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [ "development", "C#", "CI/CD", "DevOps", "GitHub" ]
+
+["4 - Content Modularisation Team (NHS UK)"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [ ]
+
+["5 - NHS App"]
+directorate = "Product Development"
+number_of_grads = 2
+tags = [ "development", "C#", "CI/CD", "DevOps", "GitHub" ]
+
+["7 - NHS Pathways"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [ "development", "C#", "CI/CD", "DevOps", "GitHub" ]
+
+["8 - DoS Suite of products (Urgent & Emergency Care directorate)"]
+directorate = "Product Development"
+number_of_grads = 5
+tags = [ ]
+
+["9 - Management Information Team, Product Implementation (PIRM)"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [ ]
+
+["10 - Spine Core"]
+directorate = "Platforms"
+number_of_grads = 1
+tags = [ "development", "Python", "CI/CD", "DevOps", "GitHub" ]
+
+["11 - Development Office"]
+directorate = "Platforms"
+number_of_grads = 1
+tags = [ ]
+
+["12 - Risk Stratification"]
+directorate = "Platforms"
+number_of_grads = 2
+tags = [ ]
+
+["13 - Business Operations"]
+directorate = "Platforms"
+number_of_grads = 1
+tags = [ ]
+
+["14 - Cloud Centre of Excellence (Infrastructure Services)"]
+directorate = "IT Operations"
+number_of_grads = 1
+tags = [ "CI/CD", "DevOps", "Infrastructure" ]
+
+["15 - INSTANT (Solution Assurance)"]
+directorate = "IT Operations"
+number_of_grads = 1
+tags = [ "Machine Learning" ]
+
+["16 - ITOC"]
+directorate = "IT Operations"
+number_of_grads = 2
+tags = [ "Splunk" ]
+
+["17 - Data Science Skilled Team"]
+directorate = "Data Services"
+number_of_grads = 3
+tags = [ "Data Science", "Pandas" ]
+
+["18 - Adult Social Care Statistics"]
+directorate = "Data Services"
+number_of_grads = 2
+tags = [ "development", "Python", "Pandas", "GitHub" ]
+
+["19 - Business Intelligence (Dashboard) Team"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [ "Data Visualisation" ]
+
+["20 - Information Standards"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [ ]
+
+["21 - Publications and Adhocs Development Team (Seacole Squad) in the Analytical Serivces: Population Health, Clinical Audit and Specialist Care tribe."]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [ ]
+
+["22 - Secondary Care Scheduled Release Team"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [ ]
+
+["23 - Analytical Insights (COVID Squad)"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [ ]
+
+["24 - Lovelace squad (Archimedes tribe)"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [ ]
+
+["25 - Analytical Insights (Prescribing)"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [ ]
+
+["26 - SPL/Enhanced Protection Programme"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [ ]
+
+["27 - Analytical Insight - Analytical Delivery Squad Number 2"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [ ]
+
+["28 - Primary Care Domain"]
+directorate = "Data Services"
+number_of_grads = 2
+tags = [ ]
+
+["29 - Various, within Data Engineering Skilled Team and as assigned by HoST for Data Engineering"]
+directorate = "Data Services"
+number_of_grads = 4
+tags = [ ]
+
+["30 - Burden Reduction (automated data extraction + data ingest transformation programmes)"]
+directorate = "Data Services"
+number_of_grads = 2
+tags = [ ]
+
+["31 - Population Health, Clinical Audit and Specialist Care (Turing Tribe)"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [ ]
+
+["32 - Lovelace squad within Archimedes tribe"]
+directorate = "Data Services"
+number_of_grads = 2
+tags = [ ]
+
+["33 - Babbage squad (in the Archimedes tribe)"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [ ]
+
+["34 - CSOC"]
+directorate = "Cyber Security"
+number_of_grads = 2
+tags = [ "Cyber Security" ]
+
+["35 - Sub directorate: Core Infrastructure services- (Team: Infra Operations)"]
+directorate = "IT Operations"
+number_of_grads = 1
+tags = [ ]
+
+["36 - Archimedes - Surveys"]
+directorate = "Data Services"
+number_of_grads = 1
+tags = [ ]
+
+["37 - Data Operations Team"]
+directorate = "IT Operations"
+number_of_grads = 1
+tags = [ ]
+
+["38 - Future Connectivity (Infrastructure Services)"]
+directorate = "IT Operations"
+number_of_grads = 1
+tags = [ ]
+
+["39 - Innovation and Delivery"]
+directorate = "Cyber Security"
+number_of_grads = 2
+tags = [ "Cyber Security" ]
+
+["40 - Risk Stratification"]
+directorate = "Platforms"
+number_of_grads = 2
+tags = [ ]
+
+["41 - Vulnerability and Patching Team (Infrastructure Services)"]
+directorate = "IT Operations"
+number_of_grads = 1
+tags = [ ]
+
+["42 - CPMO Standards & Investment"]
+directorate = "Assurance and Risk Management"
+number_of_grads = 1
+tags = [ ]
+
+["43 - Delivery Management Team, NHS Pathways"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [ "development", "C#", "CI/CD", "DevOps", "GitHub" ]
+
+["44 - Medical Device Directive Programme"]
+directorate = "Assurance and Risk Management"
+number_of_grads = 2
+tags = [ "development", "C#", "CI/CD", "DevOps", "GitHub" ]
+
+["45 - National Vaccination Booking Service"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [ ]
+
+["46 - NHS.UK Campaigns Team"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [ "development", "C#", "CI/CD", "DevOps", "GitHub" ]
+
+["47 - Clinical Safety"]
+directorate = "Product Development"
+number_of_grads = 1
+tags = [ "development", "C#", "CI/CD", "DevOps", "GitHub" ]
