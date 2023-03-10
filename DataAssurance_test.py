@@ -57,11 +57,11 @@ class DataAssuranceTest(unittest.TestCase):
         }
 
     def test_OutputJson(self):
-        DataAssuranceBot = DataAssurance()
-        DataAssuranceBot.check_preference_repeat(self.dataAssuranceTestJson)
-        self.assertEqual(DataAssuranceBot.data, self.dataAssuranceResultJson)
+        data_assurance_bot = DataAssurance()
+        data_assurance_bot.check_preference_repeats(self.dataAssuranceTestJson)
+        self.assertEqual(data_assurance_bot.data, self.dataAssuranceResultJson)
 
     def test_outputFile(self):
-        DataAssuranceBot = DataAssurance()
-        DataAssuranceBot.check_preference_repeat(self.dataAssuranceTestJson)
-        DataAssuranceBot.write_toml_file()
+        data_assurance_bot = DataAssurance()
+        data_assurance_bot.check_preference_repeats(self.dataAssuranceTestJson)
+        data_assurance_bot.write_toml_file()
