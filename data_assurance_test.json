@@ -1,0 +1,20 @@
+{
+    "Scott Caldwell-Nichols": {
+      "firstPreference": "3 - Pathways",
+      "secondPreference": "39 - Innovation and Delivery",
+      "thirdPreference": "15 - INSTANT (Solution Assurance)",
+      "antiPreference": "15 - INSTANT (Solution Assurance)"
+    },
+    "Mitul Dattani": {
+      "firstPreference": "5 - NHS App",
+      "secondPreference": "5 - NHS App",
+      "thirdPreference": "10 - Spine Core",
+      "antiPreference": "15 - INSTANT (Solution Assurance)"
+    },
+    "Laura Thrift": {
+      "firstPreference": "34 - CSOC",
+      "secondPreference": "15 - INSTANT (Solution Assurance)",
+      "thirdPreference": "3 - Pathways",
+      "antiPreference": "39 - Innovation and Delivery"
+    }
+}
